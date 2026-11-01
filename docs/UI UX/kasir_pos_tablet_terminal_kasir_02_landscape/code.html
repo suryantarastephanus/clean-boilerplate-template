@@ -1,0 +1,1967 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            @layer base {
+                html,
+                body {
+                    margin: 0;
+                    padding: 0;
+                }
+                body {
+                    overscroll-behavior: none;
+                }
+                main > :first-child {
+                    margin-top: 0 !important;
+                }
+                main > :last-child {
+                    margin-bottom: 0 !important;
+                }
+            }
+            ::-webkit-scrollbar {
+                display: none;
+            }
+        </style>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            'on-secondary-container': '#00311f',
+                            surface: '#131316',
+                            'on-primary-fixed-variant': '#003ea8',
+                            'surface-bright': '#39393c',
+                            'on-error-container': '#ffdad6',
+                            'primary-container': '#2563eb',
+                            'surface-container-high': '#2a2a2d',
+                            'on-secondary-fixed': '#002113',
+                            'on-tertiary': '#472a00',
+                            'on-surface': '#e4e1e6',
+                            'surface-container-low': '#1b1b1e',
+                            'on-tertiary-fixed-variant': '#653e00',
+                            secondary: '#4edea3',
+                            'on-secondary-fixed-variant': '#005236',
+                            'tertiary-container': '#996100',
+                            'surface-variant': '#353438',
+                            'on-primary': '#002a78',
+                            'secondary-container': '#00a572',
+                            'secondary-fixed': '#6ffbbe',
+                            'tertiary-fixed-dim': '#ffb95f',
+                            background: '#131316',
+                            'on-primary-fixed': '#00174b',
+                            'on-surface-variant': '#c3c6d7',
+                            'surface-tint': '#b4c5ff',
+                            'on-tertiary-container': '#ffeedd',
+                            'outline-variant': '#434655',
+                            'inverse-on-surface': '#303033',
+                            'on-tertiary-fixed': '#2a1700',
+                            'surface-dim': '#131316',
+                            'on-secondary': '#003824',
+                            'inverse-primary': '#0053db',
+                            'surface-container-highest': '#353438',
+                            outline: '#8d90a0',
+                            'surface-container-lowest': '#0e0e11',
+                            'error-container': '#93000a',
+                            'on-background': '#e4e1e6',
+                            'secondary-fixed-dim': '#4edea3',
+                            'inverse-surface': '#e4e1e6',
+                            'on-error': '#690005',
+                            'primary-fixed': 'dbe1ff',
+                            error: '#ffb4ab',
+                            'on-primary-container': '#eeefff',
+                            tertiary: '#ffb95f',
+                            primary: '#b4c5ff',
+                            'tertiary-fixed': '#ffddb8',
+                            'primary-fixed-dim': '#b4c5ff',
+                            'surface-container': '#1f1f22',
+                        },
+                        borderRadius: {
+                            DEFAULT: '0.125rem',
+                            lg: '0.25rem',
+                            xl: '0.5rem',
+                            full: '0.75rem',
+                        },
+                        spacing: {
+                            margin: '0.75rem',
+                            'space-xs': '0.25rem',
+                            gutter: '0.5rem',
+                            'space-sm': '0.375rem',
+                            'gutter-tablet': '0.375rem',
+                            'space-lg': '0.75rem',
+                            'space-xl': '1rem',
+                            'margin-tablet': '0.5rem',
+                            'space-md': '0.5rem',
+                        },
+                        fontFamily: {
+                            'body-md': ['Inter'],
+                            'data-sm': ['JetBrains Mono'],
+                            'display-total-mobile': ['JetBrains Mono'],
+                            'data-md': ['JetBrains Mono'],
+                            'body-sm': ['Inter'],
+                            'headline-lg': ['Inter'],
+                            'data-lg': ['JetBrains Mono'],
+                            'display-total': ['JetBrains Mono'],
+                            'label-key': ['JetBrains Mono'],
+                            'headline-sm': ['Inter'],
+                        },
+                        fontSize: {
+                            'body-md': [
+                                '14px',
+                                {
+                                    lineHeight: '18px',
+                                    letterSpacing: '0em',
+                                    fontWeight: '400',
+                                },
+                            ],
+                            'data-sm': [
+                                '11px',
+                                {
+                                    lineHeight: '14px',
+                                    letterSpacing: '0em',
+                                    fontWeight: '500',
+                                },
+                            ],
+                            'display-total-mobile': [
+                                '32px',
+                                {
+                                    lineHeight: '36px',
+                                    letterSpacing: '-0.03em',
+                                    fontWeight: '700',
+                                },
+                            ],
+                            'data-md': [
+                                '14px',
+                                {
+                                    lineHeight: '18px',
+                                    letterSpacing: '-0.01em',
+                                    fontWeight: '500',
+                                },
+                            ],
+                            'body-sm': [
+                                '12px',
+                                {
+                                    lineHeight: '16px',
+                                    letterSpacing: '0em',
+                                    fontWeight: '400',
+                                },
+                            ],
+                            'headline-lg': [
+                                '24px',
+                                {
+                                    lineHeight: '28px',
+                                    letterSpacing: '-0.02em',
+                                    fontWeight: '600',
+                                },
+                            ],
+                            'data-lg': [
+                                '20px',
+                                {
+                                    lineHeight: '24px',
+                                    letterSpacing: '-0.02em',
+                                    fontWeight: '600',
+                                },
+                            ],
+                            'display-total': [
+                                '48px',
+                                {
+                                    lineHeight: '52px',
+                                    letterSpacing: '-0.04em',
+                                    fontWeight: '700',
+                                },
+                            ],
+                            'label-key': [
+                                '12px',
+                                {
+                                    lineHeight: '14px',
+                                    letterSpacing: '0.06em',
+                                    fontWeight: '700',
+                                },
+                            ],
+                            'headline-sm': [
+                                '18px',
+                                {
+                                    lineHeight: '22px',
+                                    letterSpacing: '-0.01em',
+                                    fontWeight: '600',
+                                },
+                            ],
+                        },
+                    },
+                },
+            };
+        </script>
+    </head>
+    <body
+        class="bg-surface font-body-md text-body-md text-on-surface antialiased select-none"
+    >
+        <header
+            class="bg-surface-container-lowest/90 fixed top-0 z-50 w-full shadow-[0_1px_8px_rgba(0,0,0,0.5)] backdrop-blur-md"
+        >
+            <div
+                class="px-margin-tablet gap-space-md flex h-14 w-full items-center justify-between"
+            >
+                <div class="gap-space-md flex items-center">
+                    <div
+                        class="gap-space-xs px-space-sm py-space-xs bg-surface-container-high flex items-center rounded"
+                    >
+                        <span
+                            class="material-symbols-outlined text-secondary text-[18px]"
+                            >point_of_sale</span
+                        ><span
+                            class="font-label-key text-label-key text-on-surface tracking-wider uppercase"
+                            >Tablet Kasir 02</span
+                        ><span
+                            class="bg-secondary ml-space-xs h-1.5 w-1.5 animate-pulse rounded-full"
+                        ></span>
+                    </div>
+                    <nav
+                        class="gap-space-xs flex items-center"
+                        data-active-classes="bg-primary-container text-on-primary-container font-headline-sm"
+                    >
+                        <a
+                            aria-current="page"
+                            class="px-space-md py-space-xs bg-primary-container text-on-primary-container font-headline-sm flex min-h-[44px] items-center rounded transition-colors"
+                            data-path="kasir-pos"
+                            href="#"
+                            >Transaksi</a
+                        ><a
+                            class="px-space-md py-space-xs font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface flex min-h-[44px] items-center rounded transition-colors"
+                            data-path="riwayat-struk"
+                            href="#"
+                            >Riwayat Nota</a
+                        ><a
+                            class="px-space-md py-space-xs font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface flex min-h-[44px] items-center rounded transition-colors"
+                            data-path="stok-cepat"
+                            href="#"
+                            >Cek Stok</a
+                        >
+                    </nav>
+                </div>
+                <div class="gap-space-sm flex items-center">
+                    <div
+                        class="gap-space-xs px-space-sm py-space-xs bg-surface-container font-data-sm text-data-sm text-on-surface-variant flex items-center rounded"
+                    >
+                        <span
+                            class="material-symbols-outlined text-secondary text-[18px]"
+                            >wifi</span
+                        ><span
+                            class="material-symbols-outlined text-secondary text-[18px]"
+                            >battery_full</span
+                        ><span class="font-data-sm text-data-sm text-on-surface"
+                            >100%</span
+                        >
+                    </div>
+                    <div
+                        class="gap-space-xs px-space-sm py-space-xs bg-surface-container flex items-center rounded"
+                    >
+                        <div class="flex flex-col text-right">
+                            <span
+                                class="font-headline-sm text-body-sm text-on-surface leading-tight"
+                                >Kasir: Budi</span
+                            ><span
+                                class="font-data-sm text-data-sm text-on-surface-variant leading-tight"
+                                >Shift 1 • Pagi</span
+                            >
+                        </div>
+                        <div
+                            class="bg-primary flex h-8 w-8 items-center justify-center rounded-full"
+                        >
+                            <span
+                                class="material-symbols-outlined text-on-primary text-[18px]"
+                                >person</span
+                            >
+                        </div>
+                    </div>
+                    <a
+                        class="gap-space-xs px-space-md py-space-xs bg-surface-container-high hover:bg-surface-bright active:bg-surface-variant text-on-surface font-label-key text-label-key flex min-h-[44px] items-center justify-center rounded transition-colors"
+                        data-path="lock-screen"
+                        href="#"
+                        ><span class="material-symbols-outlined text-[16px]"
+                            >lock</span
+                        ><span class="">Kunci Layar</span></a
+                    ><a
+                        class="gap-space-xs px-space-md py-space-xs bg-error-container text-on-error-container hover:bg-error hover:text-on-error active:bg-error-container font-label-key text-label-key flex min-h-[44px] items-center justify-center rounded transition-colors"
+                        data-path="blind-close-shift"
+                        href="#"
+                        ><span class="material-symbols-outlined text-[16px]"
+                            >logout</span
+                        ><span class="">Tutup Shift</span></a
+                    >
+                </div>
+            </div>
+        </header>
+        <main class="bg-surface min-h-screen w-full pt-14">
+            <div class="text-on-surface flex w-full flex-col select-none">
+                <!-- Interactive Viewport Canvas (Tablet Landscape Optimized 50/50 Layout) -->
+                <div
+                    class="bg-surface-container-lowest relative flex h-[calc(100vh-56px)] w-full flex-col overflow-hidden lg:flex-row"
+                >
+                    <!-- LEFT PANEL: Quick Catalog, Barcode Search & Fast-Picks (50% Width) -->
+                    <div
+                        class="bg-surface-container-low p-space-md gap-space-sm flex h-full w-full flex-col overflow-hidden lg:w-1/2"
+                    >
+                        <!-- Search & Barcode Scan Deck -->
+                        <div
+                            class="gap-space-sm flex w-full shrink-0 items-center"
+                        >
+                            <div
+                                class="bg-surface-container-highest px-space-md focus-within:bg-surface-bright relative flex h-12 flex-1 items-center rounded-xl shadow-sm transition-colors"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-outline shrink-0 text-[22px]"
+                                    >barcode_scanner</span
+                                >
+                                <input
+                                    autofocus=""
+                                    class="text-on-surface font-body-md text-body-md pl-space-sm placeholder:text-outline font-data-md w-full border-none bg-transparent outline-none"
+                                    id="barcode-input"
+                                    placeholder="Scan Barcode atau Ketik Nama Produk (F2)..."
+                                    type="text"
+                                />
+                                <span
+                                    class="font-label-key text-data-sm text-outline-variant px-space-xs bg-surface-container shrink-0 rounded py-0.5"
+                                    >ESC</span
+                                >
+                            </div>
+                            <button
+                                class="px-space-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-md text-body-md gap-space-xs flex h-12 shrink-0 items-center rounded-xl shadow-sm transition-transform active:scale-95"
+                                id="btn-open-camera"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-secondary text-[20px]"
+                                    >photo_camera</span
+                                >
+                                <span
+                                    class="font-headline-sm text-body-sm font-semibold"
+                                    >Kamera</span
+                                >
+                            </button>
+                        </div>
+                        <!-- Quick Category Pills (Touch-Scrollable, min 48px target) -->
+                        <div
+                            class="gap-space-xs py-space-xs no-scrollbar flex shrink-0 items-center overflow-x-auto"
+                        >
+                            <button
+                                class="cat-pill active px-space-lg bg-primary-container text-on-primary-container font-headline-sm text-body-sm gap-space-xs flex h-12 shrink-0 items-center rounded-xl font-semibold shadow-sm transition-all"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[18px]"
+                                    >star</span
+                                >
+                                <span class="">Semua</span>
+                            </button>
+                            <button
+                                class="cat-pill px-space-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-headline-sm text-body-sm gap-space-xs flex h-12 shrink-0 items-center rounded-xl transition-colors"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[18px]"
+                                    >smoking_rooms</span
+                                >
+                                <span class="">Rokok</span>
+                            </button>
+                            <button
+                                class="cat-pill px-space-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-headline-sm text-body-sm gap-space-xs flex h-12 shrink-0 items-center rounded-xl transition-colors"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[18px]"
+                                    >bakery_dining</span
+                                >
+                                <span class="">Roti/Kue</span>
+                            </button>
+                            <button
+                                class="cat-pill px-space-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-headline-sm text-body-sm gap-space-xs flex h-12 shrink-0 items-center rounded-xl transition-colors"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[18px]"
+                                    >local_drink</span
+                                >
+                                <span class="">Minuman Dingin</span>
+                            </button>
+                            <button
+                                class="cat-pill px-space-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-headline-sm text-body-sm gap-space-xs flex h-12 shrink-0 items-center rounded-xl transition-colors"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[18px]"
+                                    >ramen_dining</span
+                                >
+                                <span class="">Mie/Instan</span>
+                            </button>
+                            <button
+                                class="cat-pill px-space-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-headline-sm text-body-sm gap-space-xs flex h-12 shrink-0 items-center rounded-xl transition-colors"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[18px]"
+                                    >shopping_bag</span
+                                >
+                                <span class="">Plastik</span>
+                            </button>
+                        </div>
+                        <!-- Touch Quick-Select Grid (3 columns, large cards with tactile active state) -->
+                        <div
+                            class="gap-space-sm pb-space-sm grid flex-1 auto-rows-max grid-cols-2 overflow-y-auto pr-0.5 md:grid-cols-3"
+                        >
+                            <!-- Quick Pick 1 -->
+                            <button
+                                class="group p-space-sm bg-surface-container hover:bg-surface-container-high relative flex min-h-[108px] flex-col justify-between overflow-hidden rounded-xl text-left shadow-sm transition-all active:scale-95"
+                                onclick="
+                                    simulateAddCart(
+                                        'Es Batu Kristal 1kg',
+                                        3000,
+                                        'Pack',
+                                    )
+                                "
+                            >
+                                <div
+                                    class="flex w-full items-start justify-between"
+                                >
+                                    <span
+                                        class="bg-surface-variant text-secondary flex h-8 w-8 items-center justify-center rounded-lg"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[20px]"
+                                            >ac_unit</span
+                                        >
+                                    </span>
+                                    <span
+                                        class="font-data-sm text-data-sm px-space-xs bg-surface-container-lowest text-secondary rounded py-0.5"
+                                        >Stok: 42</span
+                                    >
+                                </div>
+                                <div class="mt-space-xs">
+                                    <p
+                                        class="font-headline-sm text-body-sm text-on-surface line-clamp-1 font-medium"
+                                    >
+                                        Es Batu Kristal 1kg
+                                    </p>
+                                    <p
+                                        class="font-data-md text-data-md text-secondary font-bold"
+                                    >
+                                        Rp 3.000
+                                    </p>
+                                </div>
+                            </button>
+                            <!-- Quick Pick 2 -->
+                            <button
+                                class="group p-space-sm bg-surface-container hover:bg-surface-container-high relative flex min-h-[108px] flex-col justify-between overflow-hidden rounded-xl text-left shadow-sm transition-all active:scale-95"
+                                onclick="
+                                    simulateAddCart(
+                                        'Kantong Plastik Sedang',
+                                        500,
+                                        'Lembar',
+                                    )
+                                "
+                            >
+                                <div
+                                    class="flex w-full items-start justify-between"
+                                >
+                                    <span
+                                        class="bg-surface-variant text-primary flex h-8 w-8 items-center justify-center rounded-lg"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[20px]"
+                                            >shopping_bag</span
+                                        >
+                                    </span>
+                                    <span
+                                        class="font-data-sm text-data-sm px-space-xs bg-surface-container-lowest text-outline rounded py-0.5"
+                                        >Stok: 850</span
+                                    >
+                                </div>
+                                <div class="mt-space-xs">
+                                    <p
+                                        class="font-headline-sm text-body-sm text-on-surface line-clamp-1 font-medium"
+                                    >
+                                        Plastik HD Sedang
+                                    </p>
+                                    <p
+                                        class="font-data-md text-data-md text-secondary font-bold"
+                                    >
+                                        Rp 500
+                                    </p>
+                                </div>
+                            </button>
+                            <!-- Quick Pick 3 -->
+                            <button
+                                class="group p-space-sm bg-surface-container hover:bg-surface-container-high relative flex min-h-[108px] flex-col justify-between overflow-hidden rounded-xl text-left shadow-sm transition-all active:scale-95"
+                                onclick="
+                                    simulateAddCart(
+                                        'Roti Tawar Lokal',
+                                        14500,
+                                        'Pcs',
+                                    )
+                                "
+                            >
+                                <div
+                                    class="flex w-full items-start justify-between"
+                                >
+                                    <span
+                                        class="bg-surface-variant text-tertiary flex h-8 w-8 items-center justify-center rounded-lg"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[20px]"
+                                            >bakery_dining</span
+                                        >
+                                    </span>
+                                    <span
+                                        class="font-data-sm text-data-sm px-space-xs bg-surface-container-lowest text-secondary rounded py-0.5"
+                                        >Stok: 12</span
+                                    >
+                                </div>
+                                <div class="mt-space-xs">
+                                    <p
+                                        class="font-headline-sm text-body-sm text-on-surface line-clamp-1 font-medium"
+                                    >
+                                        Roti Tawar Lokal
+                                    </p>
+                                    <p
+                                        class="font-data-md text-data-md text-secondary font-bold"
+                                    >
+                                        Rp 14.500
+                                    </p>
+                                </div>
+                            </button>
+                            <!-- Quick Pick 4 -->
+                            <button
+                                class="group p-space-sm bg-surface-container hover:bg-surface-container-high relative flex min-h-[108px] flex-col justify-between overflow-hidden rounded-xl text-left shadow-sm transition-all active:scale-95"
+                                onclick="
+                                    simulateAddCart(
+                                        'Kopi Panas Seduh',
+                                        5000,
+                                        'Cup',
+                                    )
+                                "
+                            >
+                                <div
+                                    class="flex w-full items-start justify-between"
+                                >
+                                    <span
+                                        class="bg-surface-variant text-tertiary-fixed-dim flex h-8 w-8 items-center justify-center rounded-lg"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[20px]"
+                                            >coffee</span
+                                        >
+                                    </span>
+                                    <span
+                                        class="font-data-sm text-data-sm px-space-xs bg-surface-container-lowest text-secondary rounded py-0.5"
+                                        >Siap Saji</span
+                                    >
+                                </div>
+                                <div class="mt-space-xs">
+                                    <p
+                                        class="font-headline-sm text-body-sm text-on-surface line-clamp-1 font-medium"
+                                    >
+                                        Kopi Panas Seduh
+                                    </p>
+                                    <p
+                                        class="font-data-md text-data-md text-secondary font-bold"
+                                    >
+                                        Rp 5.000
+                                    </p>
+                                </div>
+                            </button>
+                            <!-- Quick Pick 5 -->
+                            <button
+                                class="group p-space-sm bg-surface-container hover:bg-surface-container-high relative flex min-h-[108px] flex-col justify-between overflow-hidden rounded-xl text-left shadow-sm transition-all active:scale-95"
+                                onclick="
+                                    simulateAddCart(
+                                        'Galon Aqua Isi Ulang',
+                                        21000,
+                                        'Tukar',
+                                    )
+                                "
+                            >
+                                <div
+                                    class="flex w-full items-start justify-between"
+                                >
+                                    <span
+                                        class="bg-surface-variant text-primary-fixed-dim flex h-8 w-8 items-center justify-center rounded-lg"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[20px]"
+                                            >water_drop</span
+                                        >
+                                    </span>
+                                    <span
+                                        class="font-data-sm text-data-sm px-space-xs bg-surface-container-lowest text-secondary rounded py-0.5"
+                                        >Stok: 28</span
+                                    >
+                                </div>
+                                <div class="mt-space-xs">
+                                    <p
+                                        class="font-headline-sm text-body-sm text-on-surface line-clamp-1 font-medium"
+                                    >
+                                        Galon Aqua (Tukar)
+                                    </p>
+                                    <p
+                                        class="font-data-md text-data-md text-secondary font-bold"
+                                    >
+                                        Rp 21.000
+                                    </p>
+                                </div>
+                            </button>
+                            <!-- Quick Pick 6 -->
+                            <button
+                                class="group p-space-sm bg-surface-container hover:bg-surface-container-high relative flex min-h-[108px] flex-col justify-between overflow-hidden rounded-xl text-left shadow-sm transition-all active:scale-95"
+                                onclick="
+                                    simulateAddCart(
+                                        'Gas Elpiji 3kg Tukar',
+                                        22000,
+                                        'Tabung',
+                                    )
+                                "
+                            >
+                                <div
+                                    class="flex w-full items-start justify-between"
+                                >
+                                    <span
+                                        class="bg-surface-variant text-secondary flex h-8 w-8 items-center justify-center rounded-lg"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[20px]"
+                                            >propane_tank</span
+                                        >
+                                    </span>
+                                    <span
+                                        class="font-data-sm text-data-sm px-space-xs bg-surface-container-lowest text-secondary rounded py-0.5"
+                                        >Stok: 16</span
+                                    >
+                                </div>
+                                <div class="mt-space-xs">
+                                    <p
+                                        class="font-headline-sm text-body-sm text-on-surface line-clamp-1 font-medium"
+                                    >
+                                        Gas Elpiji 3kg
+                                    </p>
+                                    <p
+                                        class="font-data-md text-data-md text-secondary font-bold"
+                                    >
+                                        Rp 22.000
+                                    </p>
+                                </div>
+                            </button>
+                            <!-- Quick Pick 7 -->
+                            <button
+                                class="group p-space-sm bg-surface-container hover:bg-surface-container-high relative flex min-h-[108px] flex-col justify-between overflow-hidden rounded-xl text-left shadow-sm transition-all active:scale-95"
+                                onclick="
+                                    simulateAddCart(
+                                        'Gorengan Box 5 Pcs',
+                                        8000,
+                                        'Porsi',
+                                    )
+                                "
+                            >
+                                <div
+                                    class="flex w-full items-start justify-between"
+                                >
+                                    <span
+                                        class="bg-surface-variant text-tertiary flex h-8 w-8 items-center justify-center rounded-lg"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[20px]"
+                                            >lunch_dining</span
+                                        >
+                                    </span>
+                                    <span
+                                        class="font-data-sm text-data-sm px-space-xs bg-surface-container-lowest text-secondary rounded py-0.5"
+                                        >Hangat</span
+                                    >
+                                </div>
+                                <div class="mt-space-xs">
+                                    <p
+                                        class="font-headline-sm text-body-sm text-on-surface line-clamp-1 font-medium"
+                                    >
+                                        Gorengan Aneka (5 Pcs)
+                                    </p>
+                                    <p
+                                        class="font-data-md text-data-md text-secondary font-bold"
+                                    >
+                                        Rp 8.000
+                                    </p>
+                                </div>
+                            </button>
+                            <!-- Quick Pick 8 -->
+                            <button
+                                class="group p-space-sm bg-surface-container hover:bg-surface-container-high relative flex min-h-[108px] flex-col justify-between overflow-hidden rounded-xl text-left shadow-sm transition-all active:scale-95"
+                                onclick="
+                                    simulateAddCart(
+                                        'Pulsa Token Listrik PLN',
+                                        25000,
+                                        'Kwh',
+                                    )
+                                "
+                            >
+                                <div
+                                    class="flex w-full items-start justify-between"
+                                >
+                                    <span
+                                        class="bg-surface-variant text-primary flex h-8 w-8 items-center justify-center rounded-lg"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[20px]"
+                                            >bolt</span
+                                        >
+                                    </span>
+                                    <span
+                                        class="font-data-sm text-data-sm px-space-xs bg-surface-container-lowest text-secondary rounded py-0.5"
+                                        >Digital</span
+                                    >
+                                </div>
+                                <div class="mt-space-xs">
+                                    <p
+                                        class="font-headline-sm text-body-sm text-on-surface line-clamp-1 font-medium"
+                                    >
+                                        Token Listrik 20k
+                                    </p>
+                                    <p
+                                        class="font-data-md text-data-md text-secondary font-bold"
+                                    >
+                                        Rp 22.500
+                                    </p>
+                                </div>
+                            </button>
+                            <!-- Quick Pick 9: Extra Item -->
+                            <button
+                                class="group p-space-sm bg-surface-container hover:bg-surface-container-high relative flex min-h-[108px] flex-col justify-between overflow-hidden rounded-xl text-left shadow-sm transition-all active:scale-95"
+                                onclick="
+                                    simulateAddCart(
+                                        'Korek Api Gas',
+                                        3500,
+                                        'Pcs',
+                                    )
+                                "
+                            >
+                                <div
+                                    class="flex w-full items-start justify-between"
+                                >
+                                    <span
+                                        class="bg-surface-variant text-error flex h-8 w-8 items-center justify-center rounded-lg"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[20px]"
+                                            >local_fire_department</span
+                                        >
+                                    </span>
+                                    <span
+                                        class="font-data-sm text-data-sm px-space-xs bg-surface-container-lowest text-outline rounded py-0.5"
+                                        >Stok: 110</span
+                                    >
+                                </div>
+                                <div class="mt-space-xs">
+                                    <p
+                                        class="font-headline-sm text-body-sm text-on-surface line-clamp-1 font-medium"
+                                    >
+                                        Korek Api Tokai
+                                    </p>
+                                    <p
+                                        class="font-data-md text-data-md text-secondary font-bold"
+                                    >
+                                        Rp 3.500
+                                    </p>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- Quick Shift Info Tray at bottom left for operational confidence -->
+                        <div
+                            class="px-space-md py-space-xs bg-surface-container font-data-sm text-data-sm text-on-surface-variant flex shrink-0 items-center justify-between rounded-xl"
+                        >
+                            <div class="gap-space-sm flex items-center">
+                                <span
+                                    class="bg-secondary h-2 w-2 rounded-full"
+                                ></span>
+                                <span class=""
+                                    >Buffer Transaksi Lokal: Siap (0
+                                    antrian)</span
+                                >
+                            </div>
+                            <button
+                                class="text-primary hover:text-on-primary-container font-headline-sm text-body-sm cursor-pointer underline"
+                                onclick="toggleSupervisorModal(true)"
+                            >
+                                Otorisasi SPV [F9]
+                            </button>
+                        </div>
+                    </div>
+                    <!-- RIGHT PANEL: Live Cart, Inline Mutators, Kasbon Ledger & Checkout Dock (50% Width) -->
+                    <div
+                        class="bg-surface-container-lowest p-space-md gap-space-sm flex h-full w-full flex-col overflow-hidden lg:w-1/2"
+                    >
+                        <!-- Smart Customer & Kasbon Selector -->
+                        <div
+                            class="bg-surface-container-low p-space-sm gap-space-sm flex shrink-0 flex-col rounded-xl shadow-sm"
+                        >
+                            <div
+                                class="bg-surface-container-lowest grid grid-cols-2 gap-1 rounded-xl p-1"
+                            >
+                                <button
+                                    type="button"
+                                    class="font-headline-sm text-body-sm gap-space-xs bg-surface-container-high text-on-surface-variant hover:text-on-surface flex h-10 items-center justify-center rounded-lg transition-colors"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-[18px]"
+                                        >storefront</span
+                                    >
+                                    <span class="">Retail (Umum / Tunai)</span>
+                                </button>
+                                <button
+                                    type="button"
+                                    class="font-headline-sm text-body-sm gap-space-xs bg-primary-container text-on-primary-container flex h-10 items-center justify-center rounded-lg font-semibold shadow-sm transition-colors"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-[18px]"
+                                        >handshake</span
+                                    >
+                                    <span class=""
+                                        >Trader (Grosir / Kasbon)</span
+                                    >
+                                </button>
+                            </div>
+
+                            <div
+                                class="gap-space-sm flex items-center justify-between"
+                            >
+                                <div
+                                    class="gap-space-xs flex min-w-0 flex-1 items-center"
+                                >
+                                    <span
+                                        class="bg-primary text-on-primary flex h-8 w-8 shrink-0 items-center justify-center rounded-full"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[18px]"
+                                            >person</span
+                                        >
+                                    </span>
+                                    <div
+                                        class="gap-space-xs flex items-center truncate"
+                                    >
+                                        <span
+                                            class="font-headline-sm text-body-sm text-on-surface truncate font-semibold"
+                                            >Anti (085310101020)</span
+                                        >
+                                        <span
+                                            class="px-space-xs bg-surface-container-high font-data-sm text-data-sm text-secondary shrink-0 rounded py-0.5"
+                                            >Kode: a020</span
+                                        >
+                                        <span
+                                            class="px-space-xs bg-tertiary-container text-on-tertiary-container font-label-key text-data-sm shrink-0 rounded py-0.5 font-bold uppercase"
+                                            >Kasbon Aktif</span
+                                        >
+                                    </div>
+                                </div>
+                                <button
+                                    class="px-space-sm py-space-xs bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm gap-space-xs flex h-8 shrink-0 items-center rounded transition-colors"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-[14px]"
+                                        >edit</span
+                                    >
+                                    <span class="">Ganti</span>
+                                </button>
+                            </div>
+
+                            <div
+                                class="bg-surface-container p-space-sm flex flex-col gap-1.5 rounded-lg"
+                            >
+                                <div
+                                    class="font-data-sm text-data-sm flex items-center justify-between"
+                                >
+                                    <div class="gap-space-xs flex items-center">
+                                        <span class="text-on-surface-variant"
+                                            >Total Hutang:</span
+                                        >
+                                        <strong class="text-tertiary font-bold"
+                                            >Rp 350.000</strong
+                                        >
+                                        <span class="text-outline"
+                                            >/ Plafon: Rp 500.000</span
+                                        >
+                                    </div>
+                                    <span class="text-secondary font-bold"
+                                        >Sisa Plafon: Rp 150.000</span
+                                    >
+                                </div>
+                                <div
+                                    class="bg-surface-variant flex h-2 w-full overflow-hidden rounded-full"
+                                >
+                                    <div
+                                        class="bg-tertiary h-full rounded-full transition-all duration-300"
+                                        style="width: 70%"
+                                    ></div>
+                                </div>
+                                <div
+                                    class="text-data-sm font-data-sm flex items-center justify-between pt-0.5"
+                                >
+                                    <div
+                                        class="text-tertiary flex items-center gap-1"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[16px]"
+                                            >warning</span
+                                        >
+                                        <span class=""
+                                            >Terpakai 70% dari batas
+                                            kredit</span
+                                        >
+                                    </div>
+                                    <span class="text-outline"
+                                        >Batas Kredit: Rp 500.000</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cart Item List (Scrollable Rows, Clamped, Large Touch Targets >= 48px) -->
+                        <div
+                            class="space-y-space-xs flex-1 overflow-y-auto pr-0.5"
+                            id="cart-container"
+                        >
+                            <!-- Cart Item 1 -->
+                            <div
+                                class="cart-row p-space-sm bg-surface-container-low hover:bg-surface-container gap-space-sm flex items-center justify-between rounded-xl transition-colors"
+                            >
+                                <div class="min-w-0 flex-1">
+                                    <div
+                                        class="gap-space-xs flex flex-wrap items-center"
+                                    >
+                                        <span
+                                            class="font-headline-sm text-body-sm text-on-surface truncate font-semibold"
+                                            >Indomie Goreng Spesial</span
+                                        >
+                                        <span
+                                            class="px-space-xs bg-surface-container-highest font-data-sm text-data-sm text-on-surface-variant rounded py-0.5"
+                                            >Karton</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="gap-space-md font-data-sm text-data-sm text-on-surface-variant mt-0.5 flex items-center"
+                                    >
+                                        <span class="">@ Rp 118.000</span>
+                                        <span class="text-outline"
+                                            >Diskon: Rp 0</span
+                                        >
+                                    </div>
+                                </div>
+                                <!-- Stepper Buttons (h-12 min 48px touch target) -->
+                                <div
+                                    class="gap-space-xs flex shrink-0 items-center"
+                                >
+                                    <button
+                                        class="bg-surface-container-high active:bg-surface-bright text-on-surface hover:text-secondary font-headline-lg flex h-12 w-12 items-center justify-center rounded-xl transition-transform active:scale-90"
+                                        onclick="updateQty(this, -1, 118000)"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[20px]"
+                                            >remove</span
+                                        >
+                                    </button>
+                                    <span
+                                        class="font-data-md text-data-md text-on-surface item-qty w-10 text-center font-bold"
+                                        >1</span
+                                    >
+                                    <button
+                                        class="bg-surface-container-high active:bg-surface-bright text-on-surface hover:text-secondary font-headline-lg flex h-12 w-12 items-center justify-center rounded-xl transition-transform active:scale-90"
+                                        onclick="updateQty(this, 1, 118000)"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[20px]"
+                                            >add</span
+                                        >
+                                    </button>
+                                </div>
+                                <div class="w-24 shrink-0 text-right">
+                                    <p
+                                        class="font-data-md text-data-md text-on-surface item-subtotal font-bold"
+                                    >
+                                        Rp 118.000
+                                    </p>
+                                </div>
+                                <button
+                                    class="bg-error-container/40 hover:bg-error-container text-error flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-all active:scale-90"
+                                    onclick="removeRow(this)"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-[20px]"
+                                        >delete</span
+                                    >
+                                </button>
+                            </div>
+                            <!-- Cart Item 2 (Promo Beli 5 Gratis 1) -->
+                            <div
+                                class="cart-row p-space-sm bg-surface-container-low hover:bg-surface-container gap-space-sm flex items-center justify-between rounded-xl transition-colors"
+                            >
+                                <div class="min-w-0 flex-1">
+                                    <div
+                                        class="gap-space-xs flex flex-wrap items-center"
+                                    >
+                                        <span
+                                            class="font-headline-sm text-body-sm text-on-surface truncate font-semibold"
+                                            >Aqua Air Mineral 600ml</span
+                                        >
+                                        <span
+                                            class="px-space-xs bg-surface-container-highest font-data-sm text-data-sm text-on-surface-variant rounded py-0.5"
+                                            >Pcs</span
+                                        >
+                                        <span
+                                            class="px-space-xs bg-secondary-container/60 font-data-sm text-data-sm text-secondary rounded py-0.5 font-bold"
+                                            >🎁 Beli 5 Gratis 1</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="gap-space-md font-data-sm text-data-sm text-on-surface-variant mt-0.5 flex items-center"
+                                    >
+                                        <span class="">@ Rp 3.500</span>
+                                        <span
+                                            class="text-secondary font-semibold"
+                                            >Hemat Rp 3.500</span
+                                        >
+                                    </div>
+                                </div>
+                                <!-- Stepper Buttons -->
+                                <div
+                                    class="gap-space-xs flex shrink-0 items-center"
+                                >
+                                    <button
+                                        class="bg-surface-container-high active:bg-surface-bright text-on-surface hover:text-secondary font-headline-lg flex h-12 w-12 items-center justify-center rounded-xl transition-transform active:scale-90"
+                                        onclick="
+                                            updateQty(this, -1, 3500, true)
+                                        "
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[20px]"
+                                            >remove</span
+                                        >
+                                    </button>
+                                    <span
+                                        class="font-data-md text-data-md text-on-surface item-qty w-10 text-center font-bold"
+                                        >6</span
+                                    >
+                                    <button
+                                        class="bg-surface-container-high active:bg-surface-bright text-on-surface hover:text-secondary font-headline-lg flex h-12 w-12 items-center justify-center rounded-xl transition-transform active:scale-90"
+                                        onclick="updateQty(this, 1, 3500, true)"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[20px]"
+                                            >add</span
+                                        >
+                                    </button>
+                                </div>
+                                <div class="w-24 shrink-0 text-right">
+                                    <p
+                                        class="font-data-md text-data-md text-on-surface item-subtotal font-bold"
+                                    >
+                                        Rp 17.500
+                                    </p>
+                                </div>
+                                <button
+                                    class="bg-error-container/40 hover:bg-error-container text-error flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-all active:scale-90"
+                                    onclick="removeRow(this)"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-[20px]"
+                                        >delete</span
+                                    >
+                                </button>
+                            </div>
+                            <!-- Cart Item 3 -->
+                            <div
+                                class="cart-row p-space-sm bg-surface-container-low hover:bg-surface-container gap-space-sm flex items-center justify-between rounded-xl transition-colors"
+                            >
+                                <div class="min-w-0 flex-1">
+                                    <div
+                                        class="gap-space-xs flex flex-wrap items-center"
+                                    >
+                                        <span
+                                            class="font-headline-sm text-body-sm text-on-surface truncate font-semibold"
+                                            >Kopi Kapal Api Special</span
+                                        >
+                                        <span
+                                            class="px-space-xs bg-surface-container-highest font-data-sm text-data-sm text-on-surface-variant rounded py-0.5"
+                                            >Renceng</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="gap-space-md font-data-sm text-data-sm text-on-surface-variant mt-0.5 flex items-center"
+                                    >
+                                        <span class="">@ Rp 24.000</span>
+                                        <span class="text-outline"
+                                            >Diskon: Rp 0</span
+                                        >
+                                    </div>
+                                </div>
+                                <div
+                                    class="gap-space-xs flex shrink-0 items-center"
+                                >
+                                    <button
+                                        class="bg-surface-container-high active:bg-surface-bright text-on-surface hover:text-secondary font-headline-lg flex h-12 w-12 items-center justify-center rounded-xl transition-transform active:scale-90"
+                                        onclick="updateQty(this, -1, 24000)"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[20px]"
+                                            >remove</span
+                                        >
+                                    </button>
+                                    <span
+                                        class="font-data-md text-data-md text-on-surface item-qty w-10 text-center font-bold"
+                                        >2</span
+                                    >
+                                    <button
+                                        class="bg-surface-container-high active:bg-surface-bright text-on-surface hover:text-secondary font-headline-lg flex h-12 w-12 items-center justify-center rounded-xl transition-transform active:scale-90"
+                                        onclick="updateQty(this, 1, 24000)"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[20px]"
+                                            >add</span
+                                        >
+                                    </button>
+                                </div>
+                                <div class="w-24 shrink-0 text-right">
+                                    <p
+                                        class="font-data-md text-data-md text-on-surface item-subtotal font-bold"
+                                    >
+                                        Rp 48.000
+                                    </p>
+                                </div>
+                                <button
+                                    class="bg-error-container/40 hover:bg-error-container text-error flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-all active:scale-90"
+                                    onclick="removeRow(this)"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-[20px]"
+                                        >delete</span
+                                    >
+                                </button>
+                            </div>
+                            <!-- Cart Item 4 -->
+                            <div
+                                class="cart-row p-space-sm bg-surface-container-low hover:bg-surface-container gap-space-sm flex items-center justify-between rounded-xl transition-colors"
+                            >
+                                <div class="min-w-0 flex-1">
+                                    <div
+                                        class="gap-space-xs flex flex-wrap items-center"
+                                    >
+                                        <span
+                                            class="font-headline-sm text-body-sm text-on-surface truncate font-semibold"
+                                            >Sari Roti Sobek Coklat</span
+                                        >
+                                        <span
+                                            class="px-space-xs bg-surface-container-highest font-data-sm text-data-sm text-on-surface-variant rounded py-0.5"
+                                            >Pcs</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="gap-space-md font-data-sm text-data-sm text-on-surface-variant mt-0.5 flex items-center"
+                                    >
+                                        <span class="">@ Rp 12.000</span>
+                                        <span class="text-outline"
+                                            >Diskon: Rp 0</span
+                                        >
+                                    </div>
+                                </div>
+                                <div
+                                    class="gap-space-xs flex shrink-0 items-center"
+                                >
+                                    <button
+                                        class="bg-surface-container-high active:bg-surface-bright text-on-surface hover:text-secondary font-headline-lg flex h-12 w-12 items-center justify-center rounded-xl transition-transform active:scale-90"
+                                        onclick="updateQty(this, -1, 12000)"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[20px]"
+                                            >remove</span
+                                        >
+                                    </button>
+                                    <span
+                                        class="font-data-md text-data-md text-on-surface item-qty w-10 text-center font-bold"
+                                        >1</span
+                                    >
+                                    <button
+                                        class="bg-surface-container-high active:bg-surface-bright text-on-surface hover:text-secondary font-headline-lg flex h-12 w-12 items-center justify-center rounded-xl transition-transform active:scale-90"
+                                        onclick="updateQty(this, 1, 12000)"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined text-[20px]"
+                                            >add</span
+                                        >
+                                    </button>
+                                </div>
+                                <div class="w-24 shrink-0 text-right">
+                                    <p
+                                        class="font-data-md text-data-md text-on-surface item-subtotal font-bold"
+                                    >
+                                        Rp 12.000
+                                    </p>
+                                </div>
+                                <button
+                                    class="bg-error-container/40 hover:bg-error-container text-error flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-all active:scale-90"
+                                    onclick="removeRow(this)"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-[20px]"
+                                        >delete</span
+                                    >
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Pricing Summary Breakdown Area -->
+                        <div
+                            class="bg-surface-container-low p-space-sm gap-space-xs flex shrink-0 flex-col rounded-xl"
+                        >
+                            <div
+                                class="gap-space-xs bg-surface-container flex items-center rounded-lg p-1"
+                            >
+                                <div
+                                    class="bg-surface-container-lowest px-space-sm relative flex h-10 flex-1 items-center rounded-md"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-outline shrink-0 text-[18px]"
+                                        >confirmation_number</span
+                                    >
+                                    <input
+                                        type="text"
+                                        placeholder="Kode Diskon / Voucher Member..."
+                                        value="TRADER-VIP5"
+                                        class="text-on-surface font-data-sm text-data-sm pl-space-xs placeholder:text-outline w-full border-none bg-transparent uppercase outline-none"
+                                    />
+                                </div>
+                                <button
+                                    type="button"
+                                    class="px-space-md bg-secondary-container text-on-secondary-container hover:bg-secondary font-headline-sm text-body-sm gap-space-xs flex h-10 shrink-0 items-center rounded-md font-bold transition-colors"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-[16px]"
+                                        >check</span
+                                    >
+                                    <span class="">Terapkan</span>
+                                </button>
+                                <button
+                                    type="button"
+                                    class="px-space-sm bg-surface-container-high hover:bg-surface-bright text-on-surface font-headline-sm text-body-sm gap-space-xs flex h-10 shrink-0 items-center rounded-md transition-colors"
+                                    title="Diskon Manual"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-[16px]"
+                                        >percent</span
+                                    >
+                                    <span class="">Manual</span>
+                                </button>
+                            </div>
+
+                            <div class="flex flex-col gap-1 pt-1">
+                                <div
+                                    class="font-data-sm text-data-sm text-on-surface-variant flex items-center justify-between"
+                                >
+                                    <span class=""
+                                        >Subtotal Kotor (4 Item / 10 Pcs)</span
+                                    >
+                                    <span
+                                        class="text-on-surface font-semibold"
+                                        id="label-subtotal"
+                                        >Rp 207.000</span
+                                    >
+                                </div>
+                                <div
+                                    class="font-data-sm text-data-sm flex items-center justify-between"
+                                >
+                                    <span
+                                        class="text-on-surface-variant flex items-center gap-1"
+                                    >
+                                        <span class=""
+                                            >Total Diskon / Potongan</span
+                                        >
+                                        <span
+                                            class="px-space-xs bg-secondary-container/30 text-secondary text-data-sm rounded py-0.5 font-semibold"
+                                            >Promo + Member Trader</span
+                                        >
+                                    </span>
+                                    <span
+                                        class="text-secondary font-bold"
+                                        id="label-discount"
+                                        >-Rp 15.000</span
+                                    >
+                                </div>
+                                <div
+                                    class="font-data-sm text-data-sm text-on-surface-variant flex items-center justify-between"
+                                >
+                                    <span class=""
+                                        >PPN 11% (Inklusif Retail)</span
+                                    >
+                                    <span class="text-outline">Rp 19.027</span>
+                                </div>
+
+                                <div
+                                    class="mt-space-xs pt-space-xs bg-surface-container-highest px-space-md py-space-sm border-surface-variant flex items-center justify-between rounded-xl border-t"
+                                >
+                                    <div class="flex flex-col">
+                                        <span
+                                            class="font-label-key text-label-key text-outline tracking-wider uppercase"
+                                            >TOTAL TAGIHAN BERSIH</span
+                                        >
+                                        <span
+                                            class="font-body-sm text-body-sm text-secondary font-medium"
+                                            >Siap Cetak Struk (Diskon
+                                            Diterapkan)</span
+                                        >
+                                    </div>
+                                    <div class="text-right">
+                                        <span
+                                            class="font-display-total-mobile lg:font-display-total text-secondary font-bold tracking-tight"
+                                            id="grand-total-display"
+                                            >Rp 192.000</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Quick Payment Cash Pills (One-touch Preset Tender) -->
+                        <div class="gap-space-xs grid shrink-0 grid-cols-3">
+                            <button
+                                class="bg-surface-container hover:bg-surface-container-high text-on-surface font-data-md text-data-md gap-space-xs flex h-12 items-center justify-center rounded-xl font-semibold shadow-sm transition-transform active:scale-95"
+                                onclick="presetTender(192000)"
+                            >
+                                <span class="text-secondary">Uang Pas</span>
+                                <span class="">(192k)</span>
+                            </button>
+                            <button
+                                class="bg-surface-container hover:bg-surface-container-high text-on-surface font-data-md text-data-md gap-space-xs flex h-12 items-center justify-center rounded-xl font-semibold shadow-sm transition-transform active:scale-95"
+                                onclick="presetTender(200000)"
+                            >
+                                <span class="">200.000</span>
+                                <span class="text-outline font-normal"
+                                    >(+8k)</span
+                                >
+                            </button>
+                            <button
+                                class="bg-surface-container hover:bg-surface-container-high text-on-surface font-data-md text-data-md gap-space-xs flex h-12 items-center justify-center rounded-xl font-semibold shadow-sm transition-transform active:scale-95"
+                                onclick="presetTender(250000)"
+                            >
+                                <span class="">250.000</span>
+                                <span class="text-outline font-normal"
+                                    >(+58k)</span
+                                >
+                            </button>
+                        </div>
+                        <!-- Bottom Sticky Action Bar (h-14 buttons, high-contrast, touch-optimized) -->
+                        <div class="gap-space-sm flex shrink-0 items-center">
+                            <!-- Batal Transaksi (Destructive) -->
+                            <button
+                                class="px-space-md bg-error-container/30 hover:bg-error-container text-error hover:text-on-error font-label-key text-label-key flex h-14 shrink-0 flex-col items-center justify-center gap-0.5 rounded-xl uppercase transition-all active:scale-95"
+                                onclick="clearCart()"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[20px]"
+                                    >cancel</span
+                                >
+                                <span class="">Batal (F4)</span>
+                            </button>
+                            <!-- Kasbon Quick Mode -->
+                            <button
+                                class="px-space-md bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-key text-label-key flex h-14 shrink-0 flex-col items-center justify-center gap-0.5 rounded-xl uppercase transition-all active:scale-95"
+                                onclick="payWithKasbon()"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-tertiary text-[20px]"
+                                    >account_balance_wallet</span
+                                >
+                                <span class="">Kasbon</span>
+                            </button>
+                            <!-- Primary Full-Bleed Action Button [BAYAR] -->
+                            <button
+                                class="bg-primary-container hover:bg-primary-container/90 text-on-primary-container font-headline-sm text-headline-sm px-space-lg flex h-14 flex-1 items-center justify-between rounded-xl font-bold shadow-lg transition-all active:scale-[0.98]"
+                                onclick="openPaymentSuccessModal()"
+                            >
+                                <div class="gap-space-sm flex items-center">
+                                    <span
+                                        class="material-symbols-outlined text-[26px]"
+                                        >payments</span
+                                    >
+                                    <span class="">BAYAR [Spasi]</span>
+                                </div>
+                                <span
+                                    class="font-data-md text-data-md px-space-sm bg-surface-container-lowest/30 rounded-lg py-1"
+                                    >Tunai / QRIS</span
+                                >
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- OVERLAY 1: INTERACTIVE LOCK SCREEN (PIN NUMPAD) -->
+                <div
+                    class="bg-background/90 p-space-md fixed inset-0 z-50 flex hidden items-center justify-center backdrop-blur-md transition-opacity"
+                    id="lock-screen-modal"
+                >
+                    <div
+                        class="bg-surface-container-low p-space-lg gap-space-md flex w-full max-w-sm flex-col items-center rounded-xl shadow-2xl"
+                    >
+                        <div
+                            class="bg-primary-container text-on-primary-container flex h-16 w-16 items-center justify-center rounded-full shadow-md"
+                        >
+                            <span class="material-symbols-outlined text-[32px]"
+                                >lock</span
+                            >
+                        </div>
+                        <div class="text-center">
+                            <h2
+                                class="font-headline-lg text-headline-lg text-on-surface font-bold"
+                            >
+                                Tablet Terkunci
+                            </h2>
+                            <p
+                                class="font-body-md text-body-md text-on-surface-variant"
+                            >
+                                Kasir: Budi • Shift 1 Pagi
+                            </p>
+                            <p
+                                class="font-data-lg text-data-lg text-secondary mt-space-xs font-semibold"
+                                id="lock-clock"
+                            >
+                                14.58.22 WIB
+                            </p>
+                        </div>
+                        <!-- PIN Indicator Dots -->
+                        <div
+                            class="gap-space-md my-space-xs flex items-center justify-center"
+                        >
+                            <div
+                                class="bg-surface-container-highest h-4 w-4 rounded-full transition-colors"
+                                id="pin-dot-1"
+                            ></div>
+                            <div
+                                class="bg-surface-container-highest h-4 w-4 rounded-full transition-colors"
+                                id="pin-dot-2"
+                            ></div>
+                            <div
+                                class="bg-surface-container-highest h-4 w-4 rounded-full transition-colors"
+                                id="pin-dot-3"
+                            ></div>
+                            <div
+                                class="bg-surface-container-highest h-4 w-4 rounded-full transition-colors"
+                                id="pin-dot-4"
+                            ></div>
+                        </div>
+                        <!-- Numeric Keypad Grid (Min 48px touch targets) -->
+                        <div class="gap-space-xs grid w-full grid-cols-3">
+                            <button
+                                class="bg-surface-container-high active:bg-surface-bright text-on-surface font-data-lg text-data-lg h-14 rounded-xl font-bold transition-colors"
+                                onclick="pressPin('1')"
+                            >
+                                1
+                            </button>
+                            <button
+                                class="bg-surface-container-high active:bg-surface-bright text-on-surface font-data-lg text-data-lg h-14 rounded-xl font-bold transition-colors"
+                                onclick="pressPin('2')"
+                            >
+                                2
+                            </button>
+                            <button
+                                class="bg-surface-container-high active:bg-surface-bright text-on-surface font-data-lg text-data-lg h-14 rounded-xl font-bold transition-colors"
+                                onclick="pressPin('3')"
+                            >
+                                3
+                            </button>
+                            <button
+                                class="bg-surface-container-high active:bg-surface-bright text-on-surface font-data-lg text-data-lg h-14 rounded-xl font-bold transition-colors"
+                                onclick="pressPin('4')"
+                            >
+                                4
+                            </button>
+                            <button
+                                class="bg-surface-container-high active:bg-surface-bright text-on-surface font-data-lg text-data-lg h-14 rounded-xl font-bold transition-colors"
+                                onclick="pressPin('5')"
+                            >
+                                5
+                            </button>
+                            <button
+                                class="bg-surface-container-high active:bg-surface-bright text-on-surface font-data-lg text-data-lg h-14 rounded-xl font-bold transition-colors"
+                                onclick="pressPin('6')"
+                            >
+                                6
+                            </button>
+                            <button
+                                class="bg-surface-container-high active:bg-surface-bright text-on-surface font-data-lg text-data-lg h-14 rounded-xl font-bold transition-colors"
+                                onclick="pressPin('7')"
+                            >
+                                7
+                            </button>
+                            <button
+                                class="bg-surface-container-high active:bg-surface-bright text-on-surface font-data-lg text-data-lg h-14 rounded-xl font-bold transition-colors"
+                                onclick="pressPin('8')"
+                            >
+                                8
+                            </button>
+                            <button
+                                class="bg-surface-container-high active:bg-surface-bright text-on-surface font-data-lg text-data-lg h-14 rounded-xl font-bold transition-colors"
+                                onclick="pressPin('9')"
+                            >
+                                9
+                            </button>
+                            <button
+                                class="bg-surface-container active:bg-surface-variant text-error font-body-md text-body-md h-14 rounded-xl font-semibold transition-colors"
+                                onclick="clearPin()"
+                            >
+                                Hapus
+                            </button>
+                            <button
+                                class="bg-surface-container-high active:bg-surface-bright text-on-surface font-data-lg text-data-lg h-14 rounded-xl font-bold transition-colors"
+                                onclick="pressPin('0')"
+                            >
+                                0
+                            </button>
+                            <button
+                                class="bg-secondary-container active:bg-secondary text-on-secondary-container font-body-md text-body-md h-14 rounded-xl font-bold transition-colors"
+                                onclick="unlockTerminal()"
+                            >
+                                Buka
+                            </button>
+                        </div>
+                        <p
+                            class="font-data-sm text-data-sm text-outline text-center"
+                        >
+                            Petunjuk demo: Masukkan 4 angka apa saja lalu tekan
+                            Buka.
+                        </p>
+                    </div>
+                </div>
+                <!-- OVERLAY 2: SUPERVISOR OVERRIDE / OTORISASI MODAL -->
+                <div
+                    class="bg-background/80 p-space-md fixed inset-0 z-50 flex hidden items-center justify-center backdrop-blur-md transition-opacity"
+                    id="spv-modal"
+                >
+                    <div
+                        class="bg-surface-container p-space-lg gap-space-md flex w-full max-w-md flex-col rounded-xl shadow-2xl"
+                    >
+                        <div class="gap-space-sm flex items-start">
+                            <div
+                                class="bg-error-container text-on-error-container flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[28px]"
+                                    >shield_person</span
+                                >
+                            </div>
+                            <div>
+                                <h3
+                                    class="font-headline-lg text-headline-sm text-on-surface font-bold"
+                                >
+                                    Otorisasi Supervisor Diperlukan
+                                </h3>
+                                <p
+                                    class="font-body-sm text-body-sm text-on-surface-variant"
+                                >
+                                    Transaksi Melampaui Plafon Sisa Kasbon
+                                    Pelanggan!
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Financial Variance Info Card -->
+                        <div
+                            class="bg-surface-container-highest p-space-sm space-y-1 rounded-xl"
+                        >
+                            <div
+                                class="font-data-sm text-data-sm flex justify-between"
+                            >
+                                <span class="text-outline"
+                                    >Tagihan Saat Ini:</span
+                                >
+                                <span class="text-on-surface font-bold"
+                                    >Rp 192.000</span
+                                >
+                            </div>
+                            <div
+                                class="font-data-sm text-data-sm flex justify-between"
+                            >
+                                <span class="text-outline"
+                                    >Sisa Plafon Kasbon:</span
+                                >
+                                <span class="text-error font-bold"
+                                    >Rp 150.000</span
+                                >
+                            </div>
+                            <div
+                                class="font-data-sm text-data-sm border-surface-variant flex justify-between border-t pt-1"
+                            >
+                                <span class="text-tertiary font-semibold"
+                                    >Deviasi / Selisih Lebih:</span
+                                >
+                                <span class="text-tertiary font-bold"
+                                    >+Rp 42.000 (Perlu Otorisasi SPV)</span
+                                >
+                            </div>
+                        </div>
+                        <!-- Supervisor PIN input -->
+                        <div class="space-y-space-xs">
+                            <label
+                                class="font-label-key text-label-key text-outline uppercase"
+                                >PIN Otorisasi Supervisor (Shift Leader)</label
+                            >
+                            <input
+                                class="px-space-md bg-surface-container-lowest font-data-lg text-data-lg text-on-surface focus:bg-surface-bright h-12 w-full rounded-xl text-center tracking-widest outline-none"
+                                maxlength="6"
+                                placeholder="Masukkan 6 Digit PIN..."
+                                type="password"
+                            />
+                        </div>
+                        <!-- Modal Action Buttons -->
+                        <div class="gap-space-sm mt-space-xs flex items-center">
+                            <button
+                                class="bg-surface-container-high hover:bg-surface-bright text-on-surface font-headline-sm text-body-sm h-12 flex-1 rounded-xl transition-colors"
+                                onclick="toggleSupervisorModal(false)"
+                            >
+                                Tolak / Batal
+                            </button>
+                            <button
+                                class="bg-primary-container hover:bg-primary text-on-primary-container font-headline-sm text-body-sm h-12 flex-1 rounded-xl font-bold transition-colors"
+                                onclick="approveSupervisorOverride()"
+                            >
+                                Setujui Kasbon
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- OVERLAY 3: PAYMENT CONFIRMATION TOAST / MODAL -->
+                <div
+                    class="bg-background/80 p-space-md fixed inset-0 z-50 flex hidden items-center justify-center backdrop-blur-md transition-opacity"
+                    id="payment-modal"
+                >
+                    <div
+                        class="bg-surface-container-low p-space-lg gap-space-md flex w-full max-w-sm flex-col items-center rounded-xl text-center shadow-2xl"
+                    >
+                        <div
+                            class="bg-secondary-container text-on-secondary-container flex h-16 w-16 items-center justify-center rounded-full"
+                        >
+                            <span class="material-symbols-outlined text-[36px]"
+                                >check_circle</span
+                            >
+                        </div>
+                        <div>
+                            <h3
+                                class="font-headline-lg text-headline-sm text-on-surface font-bold"
+                            >
+                                Transaksi Berhasil!
+                            </h3>
+                            <p
+                                class="font-body-md text-body-md text-on-surface-variant mt-1"
+                            >
+                                Struk #02-88294 dicetak otomatis.
+                            </p>
+                            <p
+                                class="font-data-lg text-data-lg text-secondary mt-space-sm font-bold"
+                            >
+                                Total Rp 192.000
+                            </p>
+                        </div>
+                        <div class="gap-space-xs flex w-full flex-col">
+                            <button
+                                class="bg-primary-container hover:bg-primary text-on-primary-container font-headline-sm text-body-sm h-12 w-full rounded-xl font-bold transition-all"
+                                onclick="closePaymentModal()"
+                            >
+                                Selesai / Transaksi Baru [ENTER]
+                            </button>
+                            <button
+                                class="bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm h-10 w-full rounded-xl transition-colors"
+                                onclick="closePaymentModal()"
+                            >
+                                Cetak Ulang Struk
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Touch & Interactive Logic Engine -->
+            <script>
+                // Clock Updater
+                function updateClock() {
+                    const now = new Date();
+                    const clockEl = document.getElementById('lock-clock');
+                    if (clockEl) {
+                        clockEl.textContent =
+                            now.toLocaleTimeString('id-ID') + ' WIB';
+                    }
+                }
+                setInterval(updateClock, 1000);
+                updateClock();
+
+                // Pin Pad Logic for Lock Screen
+                let currentPin = '';
+                function pressPin(num) {
+                    if (currentPin.length < 4) {
+                        currentPin += num;
+                        refreshPinDots();
+                    }
+                }
+
+                function clearPin() {
+                    currentPin = '';
+                    refreshPinDots();
+                }
+
+                function refreshPinDots() {
+                    for (let i = 1; i <= 4; i++) {
+                        const dot = document.getElementById('pin-dot-' + i);
+                        if (dot) {
+                            if (i <= currentPin.length) {
+                                dot.classList.remove(
+                                    'bg-surface-container-highest',
+                                );
+                                dot.classList.add('bg-secondary');
+                            } else {
+                                dot.classList.remove('bg-secondary');
+                                dot.classList.add(
+                                    'bg-surface-container-highest',
+                                );
+                            }
+                        }
+                    }
+                }
+
+                function toggleLockScreen(show) {
+                    const modal = document.getElementById('lock-screen-modal');
+                    if (show) {
+                        currentPin = '';
+                        refreshPinDots();
+                        modal.classList.remove('hidden');
+                    } else {
+                        modal.classList.add('hidden');
+                    }
+                }
+
+                function unlockTerminal() {
+                    if (currentPin.length >= 1) {
+                        toggleLockScreen(false);
+                    } else {
+                        alert(
+                            'Masukkan minimal 1 digit PIN untuk membuka kunci.',
+                        );
+                    }
+                }
+
+                // Hook global lock button from app shell header
+                document.addEventListener('DOMContentLoaded', () => {
+                    const lockBtn = document.querySelector(
+                        'a[data-path="lock-screen"]',
+                    );
+                    if (lockBtn) {
+                        lockBtn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            toggleLockScreen(true);
+                        });
+                    }
+
+                    const closeShiftBtn = document.querySelector(
+                        'a[data-path="blind-close-shift"]',
+                    );
+                    if (closeShiftBtn) {
+                        closeShiftBtn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            if (
+                                confirm(
+                                    'Lakukan Tutup Shift Kasir (Blind Close)? Seluruh transaksi akan diarsipkan ke server.',
+                                )
+                            ) {
+                                alert(
+                                    'Laporan Rekonsiliasi Kas Siap Cetak. Shift 1 Kasir Budi Ditutup.',
+                                );
+                            }
+                        });
+                    }
+
+                    // Category Pill Toggle
+                    const pills = document.querySelectorAll('.cat-pill');
+                    pills.forEach((p) => {
+                        p.addEventListener('click', () => {
+                            pills.forEach((btn) => {
+                                btn.classList.remove(
+                                    'bg-primary-container',
+                                    'text-on-primary-container',
+                                );
+                                btn.classList.add(
+                                    'bg-surface-container-high',
+                                    'text-on-surface',
+                                );
+                            });
+                            p.classList.remove(
+                                'bg-surface-container-high',
+                                'text-on-surface',
+                            );
+                            p.classList.add(
+                                'bg-primary-container',
+                                'text-on-primary-container',
+                            );
+                        });
+                    });
+
+                    // Keyboard Shortcuts (Hotkeys)
+                    window.addEventListener('keydown', (e) => {
+                        if (e.key === 'F2') {
+                            e.preventDefault();
+                            document.getElementById('barcode-input').focus();
+                        } else if (
+                            e.code === 'Space' &&
+                            document.activeElement.tagName !== 'INPUT'
+                        ) {
+                            e.preventDefault();
+                            openPaymentSuccessModal();
+                        } else if (e.key === 'F4') {
+                            e.preventDefault();
+                            clearCart();
+                        } else if (e.key === 'F9') {
+                            e.preventDefault();
+                            toggleSupervisorModal(true);
+                        }
+                    });
+                });
+
+                // Supervisor Override Modal
+                function toggleSupervisorModal(show) {
+                    const spv = document.getElementById('spv-modal');
+                    if (show) spv.classList.remove('hidden');
+                    else spv.classList.add('hidden');
+                }
+
+                function approveSupervisorOverride() {
+                    toggleSupervisorModal(false);
+                    alert(
+                        'Otorisasi SPV Sukses: Limit Kasbon berhasil dibuka untuk transaksi ini.',
+                    );
+                }
+
+                function payWithKasbon() {
+                    toggleSupervisorModal(true);
+                }
+
+                // Cart Mutators
+                function updateQty(btn, delta, unitPrice, isPromo = false) {
+                    const row = btn.closest('.cart-row');
+                    const qtySpan = row.querySelector('.item-qty');
+                    const subtotalSpan = row.querySelector('.item-subtotal');
+                    let qty = parseInt(qtySpan.textContent) + delta;
+                    if (qty < 1) qty = 1;
+                    qtySpan.textContent = qty;
+
+                    let total = qty * unitPrice;
+                    if (isPromo && qty >= 6) {
+                        // Free 1 per 6
+                        const freeCount = Math.floor(qty / 6);
+                        total -= freeCount * unitPrice;
+                    }
+                    subtotalSpan.textContent =
+                        'Rp ' + total.toLocaleString('id-ID');
+                }
+
+                function removeRow(btn) {
+                    const row = btn.closest('.cart-row');
+                    row.remove();
+                }
+
+                function simulateAddCart(name, price, unit) {
+                    const container = document.getElementById('cart-container');
+                    const div = document.createElement('div');
+                    div.className =
+                        'cart-row p-space-sm bg-surface-container-low hover:bg-surface-container rounded-xl flex items-center justify-between gap-space-sm transition-colors';
+                    div.innerHTML = `
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-space-xs flex-wrap">
+          <span class="font-headline-sm text-body-sm font-semibold text-on-surface truncate">${name}</span>
+          <span class="px-space-xs py-0.5 rounded bg-surface-container-highest font-data-sm text-data-sm text-on-surface-variant">${unit}</span>
+        </div>
+        <div class="flex items-center gap-space-md font-data-sm text-data-sm text-on-surface-variant mt-0.5">
+          <span>@ Rp ${price.toLocaleString('id-ID')}</span>
+          <span class="text-outline">Diskon: Rp 0</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-space-xs shrink-0">
+        <button onclick="updateQty(this, -1, ${price})" class="w-12 h-12 bg-surface-container-high active:bg-surface-bright rounded-xl flex items-center justify-center text-on-surface hover:text-secondary font-headline-lg transition-transform active:scale-90">
+          <span class="material-symbols-outlined text-[20px]">remove</span>
+        </button>
+        <span class="w-10 text-center font-data-md text-data-md font-bold text-on-surface item-qty">1</span>
+        <button onclick="updateQty(this, 1, ${price})" class="w-12 h-12 bg-surface-container-high active:bg-surface-bright rounded-xl flex items-center justify-center text-on-surface hover:text-secondary font-headline-lg transition-transform active:scale-90">
+          <span class="material-symbols-outlined text-[20px]">add</span>
+        </button>
+      </div>
+      <div class="w-24 text-right shrink-0">
+        <p class="font-data-md text-data-md font-bold text-on-surface item-subtotal">Rp ${price.toLocaleString('id-ID')}</p>
+      </div>
+      <button onclick="removeRow(this)" class="w-12 h-12 rounded-xl bg-error-container/40 hover:bg-error-container text-error flex items-center justify-center shrink-0 active:scale-90 transition-all">
+        <span class="material-symbols-outlined text-[20px]">delete</span>
+      </button>
+    `;
+                    container.prepend(div);
+                }
+
+                function clearCart() {
+                    if (confirm('Batalkan semua item di keranjang?')) {
+                        document.getElementById('cart-container').innerHTML = `
+        <div class="h-48 flex flex-col items-center justify-center text-outline gap-space-xs">
+          <span class="material-symbols-outlined text-[42px]">remove_shopping_cart</span>
+          <span class="font-body-md text-body-md">Keranjang Kosong. Scan barcode atau pilih produk cepat.</span>
+        </div>
+      `;
+                        document.getElementById(
+                            'grand-total-display',
+                        ).textContent = 'Rp 0';
+                        document.getElementById('label-subtotal').textContent =
+                            'Rp 0';
+                        document.getElementById('label-discount').textContent =
+                            'Rp 0';
+                    }
+                }
+
+                function presetTender(amount) {
+                    alert(
+                        'Diterima Tunai: Rp ' +
+                            amount.toLocaleString('id-ID') +
+                            '\nKembalian: Rp ' +
+                            (amount - 192000).toLocaleString('id-ID'),
+                    );
+                    openPaymentSuccessModal();
+                }
+
+                function openPaymentSuccessModal() {
+                    document
+                        .getElementById('payment-modal')
+                        .classList.remove('hidden');
+                }
+
+                function closePaymentModal() {
+                    document
+                        .getElementById('payment-modal')
+                        .classList.add('hidden');
+                }
+
+                document
+                    .getElementById('btn-open-camera')
+                    ?.addEventListener('click', () => {
+                        alert(
+                            'Kamera Barcode Terhubung: Mode scan video aktif.',
+                        );
+                    });
+            </script>
+        </main>
+        <footer
+            class="bg-surface-container-lowest/80 py-space-xs px-margin-tablet w-full"
+        >
+            <div
+                class="font-data-sm text-data-sm text-on-surface-variant flex w-full items-center justify-between"
+            >
+                <span class="">Minimarket POS v2.4 • Sinkronisasi Lokal OK</span
+                ><span class=""
+                    >Hotkeys: [F2] Scan • [SPACE] Bayar Cepat • [ESC]
+                    Batal</span
+                >
+            </div>
+        </footer>
+    </body>
+</html>

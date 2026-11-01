@@ -1,0 +1,84 @@
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: app-master-boilerplate:latest
+        container_name: app_server
+        restart: unless-stopped
+        ports:
+            - '${APP_PORT:-8080}:80'
+        environment:
+            APP_ENV: ${APP_ENV:-production}
+            APP_DEBUG: ${APP_DEBUG:-false}
+            APP_KEY: ${APP_KEY:-}
+            APP_URL: ${APP_URL:-http://localhost:8080}
+            DB_CONNECTION: pgsql
+            DB_HOST: postgres
+            DB_PORT: 5432
+            DB_DATABASE: ${DB_DATABASE:-app}
+            DB_USERNAME: ${DB_USERNAME:-postgres}
+            DB_PASSWORD: ${DB_PASSWORD:-secret}
+            CACHE_STORE: redis
+            SESSION_DRIVER: redis
+            REDIS_HOST: redis
+            REDIS_PORT: 6379
+            AUTO_MIGRATE: 'true'
+            AUTO_SEED: 'true'
+        depends_on:
+            postgres:
+                condition: service_healthy
+            redis:
+                condition: service_healthy
+        volumes:
+            - storage_data:/var/www/html/storage
+        networks:
+            - app_network
+
+    postgres:
+        image: postgres:16-alpine
+        container_name: app_postgres
+        restart: unless-stopped
+        environment:
+            POSTGRES_DB: ${DB_DATABASE:-app}
+            POSTGRES_USER: ${DB_USERNAME:-postgres}
+            POSTGRES_PASSWORD: ${DB_PASSWORD:-secret}
+        ports:
+            - '${FORWARD_DB_PORT:-5432}:5432'
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+        networks:
+            - app_network
+        healthcheck:
+            test: ['CMD-SHELL', 'pg_isready -U $${POSTGRES_USER:-postgres} -d $${POSTGRES_DB:-app}']
+            interval: 5s
+            timeout: 5s
+            retries: 10
+
+    redis:
+        image: redis:alpine
+        container_name: app_redis
+        restart: unless-stopped
+        ports:
+            - '${FORWARD_REDIS_PORT:-6379}:6379'
+        volumes:
+            - redis_data:/data
+        networks:
+            - app_network
+        healthcheck:
+            test: ['CMD', 'redis-cli', 'ping']
+            interval: 5s
+            timeout: 5s
+            retries: 5
+
+networks:
+    app_network:
+        driver: bridge
+
+volumes:
+    postgres_data:
+        driver: local
+    redis_data:
+        driver: local
+    storage_data:
+        driver: local

@@ -1,0 +1,104 @@
+<?php
+
+use App\Models\User;
+use Illuminate\Support\Facades\RateLimiter;
+use Laravel\Fortify\Features;
+
+test('login screen can be rendered', function () {
+    $response = $this->get(route('login'));
+
+    $response->assertOk();
+});
+
+test('users can authenticate using the login screen', function () {
+    $user = User::factory()->create();
+
+    $response = $this->post(route('login.store'), [
+        'email' => $user->email,
+        'password' => 'password',
+    ]);
+
+    $this->assertAuthenticated();
+    $response->assertRedirect(route('dashboard', absolute: false));
+});
+
+test('users can authenticate via inertia request even if accept json header is present', function () {
+    $user = User::factory()->create();
+
+    $response = $this->withHeaders([
+        'X-Inertia' => 'true',
+        'Accept' => 'application/json',
+    ])->post(route('login.store'), [
+        'email' => $user->email,
+        'password' => 'password',
+    ]);
+
+    $this->assertAuthenticated();
+    $response->assertRedirect(route('dashboard', absolute: false));
+});
+
+test('inertia requests do not receive plain json exception response', function () {
+    // A missing page / 404 or unhandled error should not return plain JSON when X-Inertia is set
+    $response = $this->withHeaders([
+        'X-Inertia' => 'true',
+        'X-Requested-With' => 'XMLHttpRequest',
+    ])->get('/non-existent-route-for-testing-exceptions');
+
+    $this->assertFalse(
+        str_contains((string) $response->headers->get('content-type'), 'application/json')
+    );
+});
+
+test('users with two factor enabled are redirected to two factor challenge', function () {
+    $this->skipUnlessFortifyHas(Features::twoFactorAuthentication());
+
+    Features::twoFactorAuthentication([
+        'confirm' => true,
+        'confirmPassword' => true,
+    ]);
+
+    $user = User::factory()->withTwoFactor()->create();
+
+    $response = $this->post(route('login'), [
+        'email' => $user->email,
+        'password' => 'password',
+    ]);
+
+    $response->assertRedirect(route('two-factor.login'));
+    $response->assertSessionHas('login.id', $user->id);
+    $this->assertGuest();
+});
+
+test('users can not authenticate with invalid password', function () {
+    $user = User::factory()->create();
+
+    $this->post(route('login.store'), [
+        'email' => $user->email,
+        'password' => 'wrong-password',
+    ]);
+
+    $this->assertGuest();
+});
+
+test('users can logout', function () {
+    $user = User::factory()->create();
+
+    $response = $this->actingAs($user)->post(route('logout'));
+
+    $response->assertRedirect(route('home'));
+
+    $this->assertGuest();
+});
+
+test('users are rate limited', function () {
+    $user = User::factory()->create();
+
+    RateLimiter::increment(md5('login'.implode('|', [$user->email, '127.0.0.1'])), amount: 5);
+
+    $response = $this->post(route('login.store'), [
+        'email' => $user->email,
+        'password' => 'wrong-password',
+    ]);
+
+    $response->assertTooManyRequests();
+});

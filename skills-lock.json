@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "skills": {
+        "design-taste-frontend": {
+            "source": "Leonxlnx/taste-skill",
+            "sourceType": "github",
+            "skillPath": "skills/taste-skill/SKILL.md",
+            "computedHash": "53590ee9325bee34d7888bf0d81bd3941a108b1e7850df46802d93104e3f2b90"
+        },
+        "migrate-radix-to-base": {
+            "source": "shadcn/ui",
+            "sourceType": "github",
+            "skillPath": "skills/migrate-radix-to-base/SKILL.md",
+            "computedHash": "4fdc31bf287f674ba6bf91a648120f7b34cd7ef370f998f2cc116fed067789c5"
+        },
+        "shadcn": {
+            "source": "shadcn/ui",
+            "sourceType": "github",
+            "skillPath": "skills/shadcn/SKILL.md",
+            "computedHash": "d04e43ec01e921558b93bb8046c14a42a22556689a2827243df900825a4e1604"
+        },
+        "vibe-security": {
+            "source": "raroque/vibe-security-skill",
+            "sourceType": "github",
+            "skillPath": "vibe-security/SKILL.md",
+            "computedHash": "cc047d5ac9ba92065ce7464f4ea6ce48ec52fb907caacd564019915b2a847fa4"
+        }
+    }
+}

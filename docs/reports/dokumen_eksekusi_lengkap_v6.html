@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <title>
+            Dokumen Eksekusi Lengkap V6 - SaaS Minimarket POS & Mini-ERP
+        </title>
+        <style>
+            @page {
+                size: A4 portrait;
+                margin: 12mm 14mm 12mm 14mm;
+            }
+            *,
+            *:before,
+            *:after {
+                box-sizing: border-box;
+            }
+            body {
+                font-family:
+                    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                    Helvetica, Arial, sans-serif;
+                color: #1e293b;
+                line-height: 1.45;
+                font-size: 11.5px;
+                margin: 0;
+                padding: 0;
+                background-color: #ffffff;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            /* Cover / Header Banner */
+            .header-card {
+                border: 1px solid #e2e8f0;
+                background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+                color: #ffffff;
+                padding: 20px 22px;
+                border-radius: 8px;
+                margin-bottom: 16px;
+                position: relative;
+            }
+            .header-badge {
+                display: inline-block;
+                background-color: #10b981;
+                color: #ffffff;
+                font-size: 10px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                padding: 3px 8px;
+                border-radius: 9999px;
+                margin-bottom: 8px;
+            }
+            .header-card h1 {
+                font-size: 20px;
+                margin: 0 0 4px 0;
+                font-weight: 800;
+                letter-spacing: -0.5px;
+            }
+            .header-card h2 {
+                font-size: 13px;
+                font-weight: 400;
+                color: #94a3b8;
+                margin: 0 0 12px 0;
+            }
+            .header-meta {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+                border-top: 1px solid rgba(255, 255, 255, 0.12);
+                padding-top: 10px;
+                font-size: 10px;
+            }
+            .header-meta-item strong {
+                display: block;
+                color: #cbd5e1;
+                text-transform: uppercase;
+                font-size: 8.5px;
+                letter-spacing: 0.5px;
+                margin-bottom: 2px;
+            }
+
+            /* Section Headings */
+            h2.section-title {
+                font-size: 13.5px;
+                font-weight: 700;
+                color: #0f172a;
+                border-bottom: 2px solid #2563eb;
+                padding-bottom: 4px;
+                margin-top: 18px;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+                letter-spacing: 0.3px;
+            }
+            h3.sub-title {
+                font-size: 12px;
+                font-weight: 700;
+                color: #1e3a8a;
+                margin-top: 12px;
+                margin-bottom: 4px;
+            }
+
+            /* Summary Card / Alerts */
+            .alert-box {
+                background-color: #f8fafc;
+                border-left: 4px solid #2563eb;
+                border-right: 1px solid #e2e8f0;
+                border-top: 1px solid #e2e8f0;
+                border-bottom: 1px solid #e2e8f0;
+                padding: 10px 12px;
+                border-radius: 6px;
+                margin-bottom: 12px;
+                font-size: 11px;
+            }
+            .alert-box strong {
+                color: #1e40af;
+            }
+
+            /* Metrics Grid */
+            .metrics-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+                margin-bottom: 14px;
+            }
+            .metric-card {
+                background: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 6px;
+                padding: 10px;
+                text-align: center;
+            }
+            .metric-card .value {
+                font-size: 17px;
+                font-weight: 800;
+                color: #2563eb;
+                line-height: 1.1;
+            }
+            .metric-card .label {
+                font-size: 9px;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: #64748b;
+                margin-top: 3px;
+            }
+
+            /* Tables */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 14px;
+                font-size: 10.5px;
+            }
+            th {
+                background-color: #f1f5f9;
+                color: #0f172a;
+                font-weight: 700;
+                text-align: left;
+                padding: 6px 8px;
+                border: 1px solid #cbd5e1;
+                font-size: 10px;
+            }
+            td {
+                padding: 5px 8px;
+                border: 1px solid #e2e8f0;
+                vertical-align: top;
+            }
+            tr:nth-child(even) td {
+                background-color: #fafafa;
+            }
+
+            /* Badges */
+            .status-badge {
+                display: inline-block;
+                padding: 2px 6px;
+                border-radius: 3px;
+                font-size: 9.5px;
+                font-weight: 700;
+                text-align: center;
+                white-space: nowrap;
+            }
+            .status-success {
+                background-color: #dcfce7;
+                color: #15803d;
+                border: 1px solid #bbf7d0;
+            }
+            .status-info {
+                background-color: #e0f2fe;
+                color: #0369a1;
+                border: 1px solid #bae6fd;
+            }
+            .status-warning {
+                background-color: #fef3c7;
+                color: #b45309;
+                border: 1px solid #fde68a;
+            }
+
+            /* Code Blocks */
+            pre,
+            code {
+                font-family: Consolas, 'Courier New', Courier, monospace;
+                font-size: 10.5px;
+            }
+            pre {
+                background-color: #0f172a;
+                color: #e2e8f0;
+                padding: 8px 10px;
+                border-radius: 4px;
+                overflow-x: auto;
+                margin: 6px 0 10px 0;
+                line-height: 1.35;
+            }
+            code.inline {
+                background-color: #f1f5f9;
+                color: #0f172a;
+                padding: 1px 4px;
+                border-radius: 3px;
+                border: 1px solid #e2e8f0;
+            }
+
+            /* Page Breaks */
+            .page-break {
+                page-break-after: always;
+                break-after: page;
+            }
+
+            /* Sign-off Box */
+            .signoff-box {
+                margin-top: 20px;
+                border-top: 1.5px dashed #cbd5e1;
+                padding-top: 10px;
+                display: flex;
+                justify-content: space-between;
+                font-size: 10px;
+                color: #64748b;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header Card -->
+        <div class="header-card">
+            <span class="header-badge"
+                >Status: Selesai & Terverifikasi (Production-Ready)</span
+            >
+            <h1>DOKUMEN EKSEKUSI LENGKAP (FULL REPORT)</h1>
+            <h2>
+                Implementasi SaaS Minimarket POS & Mini-ERP (Single DB
+                Multi-Tenant)
+            </h2>
+            <div class="header-meta">
+                <div class="header-meta-item">
+                    <strong>Versi Rilis</strong>
+                    v6.0 Definitive Master
+                </div>
+                <div class="header-meta-item">
+                    <strong>Tanggal Selesai</strong>
+                    19 September 2026
+                </div>
+                <div class="header-meta-item">
+                    <strong>Arsitektur</strong>
+                    Single-DB Multi-Tenant
+                </div>
+                <div class="header-meta-item">
+                    <strong>Target Stack</strong>
+                    Laravel 11, React, MySQL 8, Docker
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Metrics -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="value">10 + 2</div>
+                <div class="label">Sprint & Fase Selesai</div>
+            </div>
+            <div class="metric-card">
+                <div class="value">100%</div>
+                <div class="label">Multi-Tenant & Demo Access</div>
+            </div>
+            <div class="metric-card">
+                <div class="value">ESC/POS</div>
+                <div class="label">Thermal Port 9100 + Drawer</div>
+            </div>
+            <div class="metric-card">
+                <div class="value">Zero Jitter</div>
+                <div class="label">Stabilized POS UI & Modals</div>
+            </div>
+        </div>
+
+        <!-- 1. Ringkasan Eksekutif -->
+        <h2 class="section-title">
+            1. Ringkasan Eksekutif (Executive Summary)
+        </h2>
+        <div class="alert-box">
+            <strong>Tujuan Utama:</strong> Membangun platform SaaS kasir retail
+            modern berkecepatan tinggi dengan arsitektur Single Database
+            Multi-Tenant, integrasi antrean stok FIFO otomatis, proteksi margin
+            (anti jual rugi), pencatatan kasbon cepat dengan limit kredit,
+            integrasi cetak struk hardware ESC/POS, manajemen shift kasir Blind
+            Close, modul HRD/Payroll, roster jadwal mingguan, audit trail buku
+            arus kas, dan stabilisasi antarmuka terminal kasir.
+        </div>
+        <p>
+            Seluruh tahapan implementasi dari
+            <strong>Sprint 1 hingga Sprint 10</strong>, pengayaan fitur Super
+            Admin, kontainerisasi Docker production, serta perbaikan menyeluruh
+            pada alur pembukaan shift (PIN otorisasi, zero layout shift modal,
+            auto-clear PIN) dan jaminan akses fitur data dummy telah tereksekusi
+            dan teruji secara menyeluruh di lingkungan lokal dan production.
+        </p>
+
+        <!-- 2. Rekapitulasi Tahapan Eksekusi -->
+        <h2 class="section-title">
+            2. Rekapitulasi Tahapan Eksekusi (Stage Breakdown)
+        </h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 8%; text-align: center">Fase</th>
+                    <th style="width: 24%">Tahap Pengerjaan</th>
+                    <th style="width: 53%">Fokus & Output Utama</th>
+                    <th style="width: 15%; text-align: center">Hasil</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: center; font-weight: bold">
+                        Sprint 1
+                    </td>
+                    <td><strong>Multi-Tenancy & Security</strong></td>
+                    <td>
+                        Pondasi tabel tenant, isolasi data model via
+                        <code class="inline">BelongsToTenant</code>, 4-digit
+                        numeric PIN, device binding UUID, dan idle-lock overlay
+                        180s.
+                    </td>
+                    <td style="text-align: center">
+                        <span class="status-badge status-success"
+                            >✅ Selesai</span
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; font-weight: bold">
+                        Sprint 2
+                    </td>
+                    <td><strong>Master Data & Dynamic UOM</strong></td>
+                    <td>
+                        Master produk, dynamic multi-satuan (Pcs, Renceng,
+                        Karton), harga grosir, dan Mass Importer CSV/Excel
+                        dengan kalkulasi saldo awal.
+                    </td>
+                    <td style="text-align: center">
+                        <span class="status-badge status-success"
+                            >✅ Selesai</span
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; font-weight: bold">
+                        Sprint 3
+                    </td>
+                    <td><strong>Purchasing & FIFO Queue</strong></td>
+                    <td>
+                        Pencatatan Purchase Order, antrean batch stok FIFO pada
+                        <code class="inline">purchase_items</code>, hutang
+                        dagang vendor (AP) & riwayat pembayaran tempo.
+                    </td>
+                    <td style="text-align: center">
+                        <span class="status-badge status-success"
+                            >✅ Selesai</span
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; font-weight: bold">
+                        Sprint 4
+                    </td>
+                    <td><strong>POS & Margin Protection</strong></td>
+                    <td>
+                        Terminal kasir responsif, fast lookup kasbon (<code
+                            class="inline"
+                            >a020</code
+                        >), validasi limit kredit, deteksi jual rugi HPP FIFO,
+                        dan PIN override Supervisor.
+                    </td>
+                    <td style="text-align: center">
+                        <span class="status-badge status-success"
+                            >✅ Selesai</span
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; font-weight: bold">
+                        Sprint 5
+                    </td>
+                    <td><strong>Shift & ESC/POS Hardware</strong></td>
+                    <td>
+                        Manajemen shift kasir (Blind Close selisih fisik laci),
+                        generator ESC/POS 58/80mm, raw TCP network socket
+                        printer, dan sinyal cash drawer.
+                    </td>
+                    <td style="text-align: center">
+                        <span class="status-badge status-success"
+                            >✅ Selesai</span
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; font-weight: bold">
+                        Sprint 6
+                    </td>
+                    <td><strong>HRD & Dynamic Payroll</strong></td>
+                    <td>
+                        Master karyawan, absensi harian kasir, kalkulasi
+                        otomatis upah & tunjangan kehadiran, dan auto-posting
+                        biaya ke arus kas (<code class="inline">cash_flows</code
+                        >).
+                    </td>
+                    <td style="text-align: center">
+                        <span class="status-badge status-success"
+                            >✅ Selesai</span
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; font-weight: bold">
+                        Sprint 7
+                    </td>
+                    <td><strong>Stock Opname & Audit Trail</strong></td>
+                    <td>
+                        Opname fisik stok dengan freeze rak, auto reconciliate
+                        selisih, kartu stok universal (<code class="inline"
+                            >stock_ledgers</code
+                        >), dan audit log immutable.
+                    </td>
+                    <td style="text-align: center">
+                        <span class="status-badge status-success"
+                            >✅ Selesai</span
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; font-weight: bold">
+                        Sprint 8
+                    </td>
+                    <td><strong>BI Dashboard & Analytics</strong></td>
+                    <td>
+                        Dashboard metrik toko: omset harian, gross profit FIFO,
+                        arus kas, ranking fast/slow moving, notifikasi stok
+                        menipis, dan portal SaaS Super Admin.
+                    </td>
+                    <td style="text-align: center">
+                        <span class="status-badge status-success"
+                            >✅ Selesai</span
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; font-weight: bold">
+                        Sprint 9
+                    </td>
+                    <td><strong>Shift Staf & Roster Mingguan</strong></td>
+                    <td>
+                        Master shift kerja multi-tenant, matriks roster mingguan
+                        (<code class="inline">/hrd/schedules</code>), copy
+                        previous week, dynamic nearest cash tender.
+                    </td>
+                    <td style="text-align: center">
+                        <span class="status-badge status-success"
+                            >✅ Selesai</span
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; font-weight: bold">
+                        Sprint 10
+                    </td>
+                    <td>
+                        <strong>Cash Flow Audit, PIN & UX Stabilized</strong>
+                    </td>
+                    <td>
+                        Modal Edit/Hapus buku kas +
+                        <code class="inline">ActivityLogService</code>,
+                        otorisasi PIN 4-digit buka shift, locking transaksi,
+                        steady modal container, auto-clear PIN, dan full feature
+                        demo tenant.
+                    </td>
+                    <td style="text-align: center">
+                        <span class="status-badge status-success"
+                            >✅ Selesai</span
+                        >
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="page-break"></div>
+
+        <!-- 3. Rincian Teknis Fitur Unggulan -->
+        <h2 class="section-title">
+            3. Rincian Teknis Fitur Unggulan (Sprint 10 & Core Engine)
+        </h2>
+
+        <h3 class="sub-title">
+            A. Otorisasi PIN Buka Shift & Proteksi Transaksi Kasir
+        </h3>
+        <p>
+            Untuk menjamin akuntabilitas pembukaan laci uang, sistem mewajibkan
+            verifikasi <strong>PIN 4-digit kasir</strong> pada rute
+            <code class="inline">POST /api/shifts/open</code>. Jika shift kasir
+            belum aktif, seluruh aksi transaksi kasir (pemindaian barcode,
+            penambahan produk ke keranjang, tombol bayar, dan tombol spasi)
+            diblokir secara dinamis. Petugas tetap dapat mengakses menu lain dan
+            melihat katalog tanpa bertransaksi via tombol <em>"Nanti Saja"</em>.
+        </p>
+
+        <h3 class="sub-title">
+            B. Steady Modal Dialog & Auto-Clear Refocus PIN
+        </h3>
+        <p>
+            Modal Buka Shift Kasir dikonfigurasi dengan batasan
+            <code class="inline">h-[500px] max-h-[90vh]</code> dan fixed
+            header/footer. Banner pesan kesalahan (error) menggantikan banner
+            panduan secara <em>in-place</em> (<code class="inline"
+                >min-h-[46px]</code
+            >), sehingga modal berposisi stabil 100% tanpa lonjakan vertikal
+            (naik-turun). Selain itu, jika kasir memasukkan PIN yang salah,
+            input PIN
+            <strong
+                >langsung dikosongkan dan kursor otomatis difokuskan
+                kembali</strong
+            >.
+        </p>
+
+        <h3 class="sub-title">
+            C. Koreksi Arus Kas (Edit & Delete) dengan Immutable Audit Trail
+        </h3>
+        <p>
+            Kesalahan pencatatan operasional pada buku kas (<code class="inline"
+                >/finance/cash-flows</code
+            >) dapat diperbaiki atau dihapus oleh pengguna yang berwenang.
+            Setiap tindakan koreksi dicatat secara permanen ke tabel
+            <code class="inline">activity_logs</code> melalui
+            <code class="inline">ActivityLogService</code>, mendokumentasikan
+            nilai sebelum dan sesudah perubahan (<code class="inline"
+                >old_data</code
+            >
+            vs <code class="inline">new_data</code>), selisih saldo, serta
+            identitas admin penanggung jawab.
+        </p>
+
+        <h3 class="sub-title">
+            D. Jaminan Akses Penuh Fitur Data Dummy (Lokal & Production)
+        </h3>
+        <p>
+            Toko dummy (<code class="inline">WRG001</code> / Waroeng Berkah
+            Mart) dan seluruh akun demo (<code class="inline">admin@</code>,
+            <code class="inline">spv@</code>,
+            <code class="inline">kasir@</code>) diberikan method
+            <code class="inline">isDemo(): bool</code> pada model
+            <code class="inline">Tenant</code>. Toko demo secara otomatis
+            mendapatkan masa aktif 10 tahun dan akses 100% ke seluruh 11 modul
+            platform (<code class="inline">['*']</code>) dengan bypass
+            middleware <code class="inline">EnsureFeatureEnabled</code> serta
+            auto-migration database.
+        </p>
+
+        <h3 class="sub-title">E. Penyelarasan Desain Navigation Header POS</h3>
+        <p>
+            Seluruh tombol, badge, dan kontrol status pada header navigasi POS
+            diseragamkan dengan tinggi <code class="inline">h-7.5</code> (30px),
+            font <code class="inline">text-xs</code>, dan bar header
+            <code class="inline">h-11</code> (44px) yang sedikit lebih besar dan
+            proporsional dibandingkan footer pintasan keyboard bawah (<code
+                class="inline"
+                >h-8</code
+            >
+            / 32px). Inisial avatar akun kasir tampil dinamis sesuai nama
+            petugas aktif.
+        </p>
+
+        <!-- 4. Log Kendala Teknis & Resolusi -->
+        <h2 class="section-title">
+            4. Log Kendala Teknis & Resolusi (Troubleshooting Log)
+        </h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 25%">Kendala / Masalah</th>
+                    <th style="width: 15%">Lingkup</th>
+                    <th style="width: 25%">Akar Masalah</th>
+                    <th style="width: 35%">Solusi & Resolusi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong
+                            >Kesalahan Input Buku Kas Tidak Bisa Diedit</strong
+                        >
+                    </td>
+                    <td>
+                        <span class="status-badge status-info">Backend</span>
+                    </td>
+                    <td>
+                        Arus kas sebelumnya bersifat append-only tanpa endpoint
+                        edit/delete.
+                    </td>
+                    <td>
+                        Menambahkan rute PUT/DELETE
+                        <code class="inline">finance/cash-flows</code> dengan
+                        audit log immutable
+                        <code class="inline">ActivityLogService</code>.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong
+                            >Kasir Langsung Transaksi Tanpa Modal Awal</strong
+                        >
+                    </td>
+                    <td>
+                        <span class="status-badge status-info">POS Flow</span>
+                    </td>
+                    <td>
+                        Transaksi dapat dijalankan sebelum shift kasir dibuka.
+                    </td>
+                    <td>
+                        Proteksi locking pada addToCart & checkout, serta
+                        validasi 4-digit PIN akun kasir saat buka shift.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Modal Shift Terpotong Keluar Layar</strong></td>
+                    <td>
+                        <span class="status-badge status-warning"
+                            >Frontend</span
+                        >
+                    </td>
+                    <td>
+                        Dialog default Radix tidak memiliki batasan tinggi
+                        viewport pada layar &lt;768px.
+                    </td>
+                    <td>
+                        Menetapkan <code class="inline">max-h-[90vh]</code>,
+                        header/footer fixed, dan body internal scrollable
+                        <code class="inline">overflow-y-auto min-h-0</code>.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Modal Bergerak "Naik-Turun" Saat Error</strong>
+                    </td>
+                    <td>
+                        <span class="status-badge status-warning"
+                            >Frontend</span
+                        >
+                    </td>
+                    <td>
+                        Alert error muncul dinamis di luar slot tetap, menambah
+                        tinggi dialog secara mendadak.
+                    </td>
+                    <td>
+                        Menetapkan fixed height
+                        <code class="inline">h-[500px]</code> dan in-place
+                        notice slot (<code class="inline">min-h-[46px]</code>)
+                        yang menggantikan banner info tanpa layout shift.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>PIN Salah Masih Tertinggal di Input</strong>
+                    </td>
+                    <td>
+                        <span class="status-badge status-warning"
+                            >Frontend</span
+                        >
+                    </td>
+                    <td>State PIN tidak di-reset saat respons gagal/salah.</td>
+                    <td>
+                        Menambahkan pemanggilan
+                        <code class="inline">setPin('')</code> dan auto-focus
+                        <code class="inline">pinInputRef.current?.focus()</code>
+                        saat error validasi.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Ukuran Header POS Tidak Seragam</strong></td>
+                    <td>
+                        <span class="status-badge status-warning"
+                            >Frontend</span
+                        >
+                    </td>
+                    <td>
+                        Elemen header memiliki variasi padding dan ukuran font
+                        yang tidak selaras.
+                    </td>
+                    <td>
+                        Menyeragamkan tinggi seluruh elemen menjadi
+                        <code class="inline">h-7.5</code> (30px), font
+                        <code class="inline">text-xs</code>, dan bar header
+                        <code class="inline">h-11</code>.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong
+                            >Fitur Terkunci pada Akun Demo Production</strong
+                        >
+                    </td>
+                    <td>
+                        <span class="status-badge status-info"
+                            >SaaS Policy</span
+                        >
+                    </td>
+                    <td>
+                        Seeder lama meng-assign tenant dummy ke paket Pro yang
+                        tidak mencakup HRD/Payroll.
+                    </td>
+                    <td>
+                        Menambahkan method
+                        <code class="inline">Tenant::isDemo()</code> (full
+                        access) dan database migration pengaktifan paket
+                        Enterprise 10 tahun.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 5. Matriks Pengujian & Verifikasi -->
+        <h2 class="section-title">5. Matriks Pengujian & Verifikasi Sistem</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 35%">Modul & Kasus Pengujian</th>
+                    <th style="width: 35%">Spesifikasi / Cakupan Uji</th>
+                    <th style="width: 15%; text-align: center">Assertions</th>
+                    <th style="width: 15%; text-align: center">Hasil</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>ShiftManagementTest</strong></td>
+                    <td>
+                        Verifikasi PIN kasir, pembukaan laci, proteksi
+                        transaksi, blind close, dan Z-Report.
+                    </td>
+                    <td style="text-align: center">29 assertions</td>
+                    <td style="text-align: center">
+                        <span class="status-badge status-success"
+                            >✅ 7/7 Passed</span
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>PosCheckoutTest</strong></td>
+                    <td>
+                        Transaksi POS cepat, pemotongan stok FIFO, locking
+                        transaksi shift, dan proteksi margin.
+                    </td>
+                    <td style="text-align: center">23 assertions</td>
+                    <td style="text-align: center">
+                        <span class="status-badge status-success"
+                            >✅ 8/8 Passed</span
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>CashFlowManagementTest</strong></td>
+                    <td>
+                        Edit nominal arus kas, hapus transaksi, audit log data
+                        lama vs baru, dan tenant boundary.
+                    </td>
+                    <td style="text-align: center">18 assertions</td>
+                    <td style="text-align: center">
+                        <span class="status-badge status-success"
+                            >✅ 5/5 Passed</span
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>WorkScheduleManagementTest</strong></td>
+                    <td>
+                        Ploting jadwal mingguan, copy previous week, validasi
+                        jam kerja, dan role check.
+                    </td>
+                    <td style="text-align: center">32 assertions</td>
+                    <td style="text-align: center">
+                        <span class="status-badge status-success"
+                            >✅ 8/8 Passed</span
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Frontend Bundling (Vite)</strong></td>
+                    <td>
+                        Kompilasi TypeScript, Tailwind CSS, Rolldown chunks, dan
+                        Wayfinder routing.
+                    </td>
+                    <td style="text-align: center">Zero Errors</td>
+                    <td style="text-align: center">
+                        <span class="status-badge status-success"
+                            >✅ Built in 12.6s</span
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Laravel Pint Code Formatter</strong></td>
+                    <td>
+                        Standar PSR-12, type declarations, constructor
+                        promotion, dan clean styling.
+                    </td>
+                    <td style="text-align: center">Zero Violations</td>
+                    <td style="text-align: center">
+                        <span class="status-badge status-success"
+                            >✅ Clean</span
+                        >
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 6. Kredensial & Panduan Akses -->
+        <h2 class="section-title">6. Kredensial Pengujian & Panduan Akses</h2>
+        <div class="alert-box">
+            <strong>Akses Sistem:</strong> Production:
+            <code class="inline">https://waroeng.umkaem.my.id</code> | Lokal:
+            <code class="inline">http://localhost:8000</code>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Peran (Role)</th>
+                    <th>Email Akun</th>
+                    <th>Password</th>
+                    <th>PIN Kasir</th>
+                    <th>Hak Akses Modul</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Admin Toko (Owner)</strong></td>
+                    <td><code class="inline">admin@waroeng.com</code></td>
+                    <td><code class="inline">password</code></td>
+                    <td><code class="inline">9999</code></td>
+                    <td>
+                        Full Akses Toko (POS, Master, Pembelian, HRD, Payroll,
+                        Kas, User)
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Supervisor</strong></td>
+                    <td><code class="inline">spv@waroeng.com</code></td>
+                    <td><code class="inline">password</code></td>
+                    <td><code class="inline">8888</code></td>
+                    <td>
+                        Otorisasi Diskon Minus HPP, Bypass Plafon Kasbon, Opname
+                        Stok
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Kasir POS</strong></td>
+                    <td><code class="inline">kasir@waroeng.com</code></td>
+                    <td><code class="inline">password</code></td>
+                    <td><code class="inline">1234</code></td>
+                    <td>
+                        Terminal Kasir (Buka Shift, Scan Barcode, Tender
+                        Tunai/QRIS/Kasbon)
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Super Administrator</strong></td>
+                    <td><code class="inline">superadmin@waroeng.com</code></td>
+                    <td><code class="inline">password</code></td>
+                    <td><code class="inline">0000</code></td>
+                    <td>
+                        Portal Platform SaaS (Kelola Seluruh Tenant, Paket,
+                        Omset Global)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Sign-off -->
+        <div class="signoff-box">
+            <div>
+                <strong>Arsip Dokumen:</strong>
+                <code class="inline"
+                    >docs/reports/DOKUMEN_EKSEKUSI_LENGKAP_V6.pdf</code
+                >
+            </div>
+            <div>
+                <strong>Status:</strong> Disetujui & Siap Serah Terima
+                (Handover)
+            </div>
+        </div>
+    </body>
+</html>

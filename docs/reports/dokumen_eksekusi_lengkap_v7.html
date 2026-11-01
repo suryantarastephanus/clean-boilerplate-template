@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <title>
+            Dokumen Eksekusi Lengkap V7 - SaaS Minimarket POS & Mini-ERP
+        </title>
+        <style>
+            @page {
+                size: A4 portrait;
+                margin: 12mm 14mm 12mm 14mm;
+            }
+            *,
+            *:before,
+            *:after {
+                box-sizing: border-box;
+            }
+            body {
+                font-family:
+                    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                    Helvetica, Arial, sans-serif;
+                color: #1e293b;
+                line-height: 1.45;
+                font-size: 11px;
+                margin: 0;
+                padding: 0;
+                background-color: #ffffff;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            /* Cover / Header Banner */
+            .header-card {
+                border: 1px solid #1e293b;
+                background: linear-gradient(135deg, #090a0f 0%, #171923 100%);
+                color: #ffffff;
+                padding: 18px 20px;
+                border-radius: 6px;
+                margin-bottom: 14px;
+                position: relative;
+            }
+            .header-badge {
+                display: inline-block;
+                background-color: #e11d48;
+                color: #ffffff;
+                font-size: 9.5px;
+                font-weight: 800;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                padding: 2.5px 8px;
+                border-radius: 4px;
+                margin-bottom: 8px;
+            }
+            .header-card h1 {
+                font-size: 19px;
+                margin: 0 0 4px 0;
+                font-weight: 800;
+                letter-spacing: -0.5px;
+            }
+            .header-card h2 {
+                font-size: 12px;
+                font-weight: 400;
+                color: #94a3b8;
+                margin: 0 0 10px 0;
+            }
+            .header-meta {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px;
+                padding-top: 10px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 10px;
+            }
+            .meta-item span.label {
+                color: #64748b;
+                display: block;
+                margin-bottom: 1px;
+                font-size: 9px;
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+            .meta-item span.val {
+                color: #f1f5f9;
+                font-weight: 600;
+            }
+
+            /* Section Styles */
+            h3.section-title {
+                font-size: 13px;
+                font-weight: 800;
+                color: #0f172a;
+                border-bottom: 1.5px solid #0f172a;
+                padding-bottom: 3px;
+                margin: 14px 0 8px 0;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            h4.sub-title {
+                font-size: 11.5px;
+                font-weight: 700;
+                color: #1e293b;
+                margin: 10px 0 4px 0;
+            }
+
+            p {
+                margin: 0 0 6px 0;
+                color: #334155;
+                text-align: justify;
+            }
+
+            /* Tables */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 6px 0 10px 0;
+                font-size: 10px;
+            }
+            th,
+            td {
+                border: 1px solid #cbd5e1;
+                padding: 5px 7px;
+                text-align: left;
+                vertical-align: top;
+            }
+            th {
+                background-color: #f1f5f9;
+                color: #0f172a;
+                font-weight: 700;
+            }
+            tr:nth-child(even) td {
+                background-color: #f8fafc;
+            }
+
+            .badge-status {
+                display: inline-block;
+                font-weight: 700;
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 9px;
+                background-color: #ecfdf5;
+                color: #059669;
+                border: 1px solid #a7f3d0;
+                white-space: nowrap;
+            }
+
+            /* Card Highlights */
+            .highlight-box {
+                border: 1px solid #e2e8f0;
+                background-color: #f8fafc;
+                border-left: 3px solid #2563eb;
+                padding: 8px 10px;
+                border-radius: 4px;
+                margin: 6px 0 10px 0;
+            }
+            .highlight-box-danger {
+                border-left-color: #e11d48;
+                background-color: #fff1f2;
+            }
+
+            /* Code & Manifest */
+            code.inline {
+                font-family: 'Courier New', Courier, monospace;
+                background-color: #f1f5f9;
+                padding: 1px 3px;
+                border-radius: 3px;
+                color: #0f172a;
+                font-size: 9.5px;
+                border: 1px solid #e2e8f0;
+            }
+
+            ul {
+                margin: 4px 0 8px 14px;
+                padding: 0;
+            }
+            li {
+                margin-bottom: 3px;
+                color: #334155;
+            }
+
+            .footer {
+                margin-top: 14px;
+                padding-top: 8px;
+                border-top: 1px solid #e2e8f0;
+                font-size: 9px;
+                color: #64748b;
+                display: flex;
+                justify-content: space-between;
+            }
+            .page-break {
+                page-break-after: always;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Cover / Header -->
+        <div class="header-card">
+            <div class="header-badge">
+                ✅ SELESAI (COMPLETED &amp; DEPLOYED) — V7.0 MASTER RELEASE
+            </div>
+            <h1>DOKUMEN EKSEKUSI LENGKAP (FULL EXECUTION REPORT)</h1>
+            <h2>
+                Sistem SaaS Minimarket POS &amp; Mini-ERP Multi-Tenant Modern
+            </h2>
+
+            <div class="header-meta">
+                <div class="meta-item">
+                    <span class="label">Versi Dokumen</span>
+                    <span class="val">v7.0 Cyber-Precision</span>
+                </div>
+                <div class="meta-item">
+                    <span class="label">Tanggal Rilis</span>
+                    <span class="val">20 September 2026</span>
+                </div>
+                <div class="meta-item">
+                    <span class="label">Lingkungan</span>
+                    <span class="val">Production &amp; Local Dev</span>
+                </div>
+                <div class="meta-item">
+                    <span class="label">Teknologi</span>
+                    <span class="val">Laravel 11, React, Shadcn (Doom-64)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1. Ringkasan Eksekutif -->
+        <h3 class="section-title">
+            1. Ringkasan Eksekutif (Executive Summary)
+        </h3>
+        <p>
+            Proyek sistem
+            <strong>SaaS Minimarket POS &amp; Mini-ERP</strong> dirancang untuk
+            menghadirkan platform kasir sub-detik (*high-throughput*) dan
+            manajemen ritel modern dengan isolasi multi-tenant yang ketat
+            (*Single Database Multi-Tenant*). Sistem mencakup inventori batch
+            FIFO, proteksi margin laba (*anti-jual rugi*), integrasi hardware
+            thermal ESC/POS, manajemen shift &amp; absensi staf, pinjaman kasbon
+            karyawan dengan potongan otomatis di slip gaji, kontrol mandiri
+            aktivasi modul (*feature toggles*), konfigurasi fleksibel jam
+            operasional dengan opsi <strong>Full Shift (1 Orang Jaga)</strong>,
+            serta adopsi tema visual high-tech <strong>Doom-64</strong> dengan
+            preservasi landing page.
+        </p>
+        <p>
+            Seluruh tahapan dari
+            <strong>Sprint 1 hingga Sprint 14</strong> telah berhasil
+            diselesaikan secara tervalidasi dengan suite automated tests (Pest),
+            lulus standar kode Laravel Pint, dan telah terpasang aktif di server
+            produksi melalui webhook CI/CD otomatis.
+        </p>
+
+        <!-- 2. Rekapitulasi Tahapan -->
+        <h3 class="section-title">
+            2. Rekapitulasi Tahapan Eksekusi (Sprint 1 - 14)
+        </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 5%">No</th>
+                    <th style="width: 20%">Tahap / Sprint</th>
+                    <th style="width: 32%">Fokus Pekerjaan Utama</th>
+                    <th style="width: 33%">Deliverables &amp; Fitur Kunci</th>
+                    <th style="width: 10%">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><strong>Sprint 1: Multi-Tenancy &amp; Auth</strong></td>
+                    <td>
+                        Arsitektur tenant, PIN kasir 4 digit, device binding,
+                        idle lock.
+                    </td>
+                    <td>
+                        Global scope BelongsToTenant, DeviceUUID, lock overlay
+                        180s.
+                    </td>
+                    <td><span class="badge-status">Selesai</span></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><strong>Sprint 2: Master Data &amp; UOM</strong></td>
+                    <td>
+                        Master SKU bertingkat Multi-UOM, Mass CSV/Excel
+                        Importer.
+                    </td>
+                    <td>
+                        Konversi Pcs/Renceng/Dus, validasi barcode, import
+                        atomik.
+                    </td>
+                    <td><span class="badge-status">Selesai</span></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><strong>Sprint 3: Pembelian &amp; FIFO AP</strong></td>
+                    <td>
+                        Purchase Order, batch stok masuk FIFO, hutang vendor
+                        tempo.
+                    </td>
+                    <td>
+                        PurchaseService, purchase_items batching, pelunasan AP.
+                    </td>
+                    <td><span class="badge-status">Selesai</span></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><strong>Sprint 4: POS &amp; Margin Guard</strong></td>
+                    <td>
+                        Kasir cepat, shortcut kasbon (a020), proteksi anti jual
+                        rugi.
+                    </td>
+                    <td>
+                        Layout sub-detik, kalkulasi HPP FIFO, supervisor PIN
+                        bypass.
+                    </td>
+                    <td><span class="badge-status">Selesai</span></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>
+                        <strong>Sprint 5: Shift Kasir &amp; ESC/POS</strong>
+                    </td>
+                    <td>
+                        Blind Close shift kasir &amp; integrasi printer thermal
+                        hardware.
+                    </td>
+                    <td>
+                        EscPosService raw command, auto kick-drawer, struk
+                        58/80mm.
+                    </td>
+                    <td><span class="badge-status">Selesai</span></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><strong>Sprint 6: HRD &amp; Payroll</strong></td>
+                    <td>
+                        Karyawan, absensi harian, kalkulasi otomatis slip gaji.
+                    </td>
+                    <td>
+                        Clock-in/out kiosk, formula tunjangan, auto buku kas
+                        beban.
+                    </td>
+                    <td><span class="badge-status">Selesai</span></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><strong>Sprint 7: Opname &amp; Audit</strong></td>
+                    <td>
+                        Opname fisik stok, kartu stok mutasi, immutable audit
+                        trail.
+                    </td>
+                    <td>
+                        StockOpnameService freeze rak, auto-reconcile,
+                        ActivityLog.
+                    </td>
+                    <td><span class="badge-status">Selesai</span></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><strong>Sprint 8: SaaS &amp; BI Admin</strong></td>
+                    <td>
+                        Dashboard metrik analitik bisnis &amp; Super Admin panel
+                        SaaS.
+                    </td>
+                    <td>
+                        Monitoring omset multi-tenant, paket langganan, isolasi
+                        admin.
+                    </td>
+                    <td><span class="badge-status">Selesai</span></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td><strong>Deployment &amp; Docker</strong></td>
+                    <td>
+                        Kontainerisasi Docker multi-stage, Nginx, webhook
+                        Easypanel.
+                    </td>
+                    <td>
+                        Alpine PHP 8.4 container, auto-migrate,
+                        trigger-deploy.ps1.
+                    </td>
+                    <td><span class="badge-status">Selesai</span></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>
+                        <strong>Sprint 9-10: POS UX &amp; Cash Flow</strong>
+                    </td>
+                    <td>
+                        Smart fast tender cash, audit log koreksi kas, steady
+                        modal shift.
+                    </td>
+                    <td>
+                        Pecahan terdekat dinamis, modal edit/hapus buku kas, PIN
+                        modal.
+                    </td>
+                    <td><span class="badge-status">Selesai</span></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>
+                        <strong>Sprint 11: Kasbon &amp; Payroll Deduct</strong>
+                    </td>
+                    <td>
+                        Manajemen plafon kasbon berbasis hari kerja &amp; potong
+                        gaji auto.
+                    </td>
+                    <td>
+                        EmployeeKasbonService, workday credit limit, auto-deduct
+                        slip.
+                    </td>
+                    <td><span class="badge-status">Selesai</span></td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td><strong>Sprint 12: Toko Feature Toggles</strong></td>
+                    <td>
+                        Fleksibilitas store admin memilih modul aktif di
+                        Pengaturan Toko.
+                    </td>
+                    <td>
+                        Toggle modul individual, filtering menu sidebar dinamis.
+                    </td>
+                    <td><span class="badge-status">Selesai</span></td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>
+                        <strong>Sprint 13: Shift Toko &amp; Full Shift</strong>
+                    </td>
+                    <td>
+                        Sentralisasi jam operasional toko &amp; opsi Full Shift
+                        (1 Orang Jaga).
+                    </td>
+                    <td>
+                        Preset 1 orang jaga (FULL), 2 shift, 3 shift, live
+                        duration calc.
+                    </td>
+                    <td><span class="badge-status">Selesai</span></td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>
+                        <strong
+                            >Sprint 14: Doom-64 Theme &amp; Isolation</strong
+                        >
+                    </td>
+                    <td>
+                        Transformasi tema Shadcn Doom-64 dengan preservasi
+                        homepage.
+                    </td>
+                    <td>
+                        Palet Crimson Red, 0px radius, Oxanium font,
+                        .homepage-isolated.
+                    </td>
+                    <td><span class="badge-status">Selesai</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Page Break for Clean Printing -->
+        <div class="page-break"></div>
+
+        <!-- 3. Rincian Teknis & Arsitektur Baru -->
+        <h3 class="section-title">3. Rincian Arsitektur Fitur Baru (v7.0)</h3>
+
+        <h4 class="sub-title">
+            A. Kasbon Karyawan &amp; Pemotongan Slip Gaji Otomatis (Sprint 11)
+        </h4>
+        <p>
+            Sistem kasbon karyawan kini dilindungi oleh plafon proporsional
+            berbasis <em>Workday Limit</em> (maksimal 3x rata-rata gaji harian
+            aktif). Saat pemilik toko membuat draft slip gaji bulanan via
+            <code class="inline">PayrollService</code>, sistem secara otomatis
+            mengecek saldo kasbon berjalan milik staf dan memasukkannya sebagai
+            baris potongan (<code class="inline">deductions</code>). Begitu slip
+            gaji disetujui, kasbon otomatis terpotong tanpa risiko kelalaian
+            administrasi. Karyawan juga dapat melakukan pelunasan mandiri di
+            luar payroll yang otomatis dicatat ke buku arus kas masuk.
+        </p>
+
+        <h4 class="sub-title">
+            B. Pengaturan Mandiri Modul Aktif Toko (Sprint 12)
+        </h4>
+        <p>
+            Setiap toko memiliki skala dan kebutuhan operasional berbeda.
+            Melalui <code class="inline">/settings/store</code>, pemilik toko
+            dapat secara mandiri mengaktifkan atau menonaktifkan modul tertentu
+            (seperti HRD Payroll, Mutasi Antar Gudang, atau Hutang Supplier).
+            Modul yang dinonaktifkan akan otomatis disembunyikan dari sidebar
+            navigasi (<code class="inline">app-sidebar.tsx</code>), menjadikan
+            sistem kasir sangat bersih, ringkas, dan bebas distraksi bagi toko
+            berskala mikro/warung tunggal.
+        </p>
+
+        <h4 class="sub-title">
+            C. Pengaturan Shift Operasional &amp; Opsi Full Shift (1 Orang Jaga)
+            (Sprint 13)
+        </h4>
+        <p>
+            Fitur jam kerja kini dapat diatur langsung dari menu
+            <strong>Pengaturan Toko</strong> (<code class="inline"
+                >/settings/store</code
+            >):
+        </p>
+        <ul>
+            <li>
+                <strong>Preset 1 Orang Jaga (Full Shift)</strong>: Mode khusus
+                toko/warung yang hanya dijaga 1 orang kasir dari buka hingga
+                tutup (<code class="inline">08:00 - 21:00</code> / 13 Jam
+                Kerja). Mengaktifkan shift <code class="inline">FULL</code> dan
+                <code class="inline">OFF</code>, serta menonaktifkan shift
+                bergilir agar kasir tidak terbebani serah terima di tengah hari.
+            </li>
+            <li>
+                <strong>Preset 2 Shift Bergilir</strong>: Standar ritel
+                minimarket (Pagi 07:00-15:00 &amp; Siang 14:30-22:30).
+            </li>
+            <li>
+                <strong>Preset 3 Shift (24 Jam)</strong>: Dilengkapi shift malam
+                lembur lintas hari (+1).
+            </li>
+            <li>
+                <strong>Kalkulator Durasi Otomatis</strong>: Menghitung total
+                durasi jam dan menit kerja secara instan saat jam mulai atau
+                selesai diubah pada dialog master shift.
+            </li>
+        </ul>
+
+        <h4 class="sub-title">
+            D. Transformasi Tema Doom-64 &amp; Homepage Isolation (Sprint 14)
+        </h4>
+        <p>
+            Tampilan antarmuka sistem telah ditingkatkan menggunakan tema visual
+            <strong>Doom-64</strong> (<code class="inline"
+                >tweakcn.com/r/themes/doom-64.json</code
+            >) yang menghadirkan nuansa retro sci-fi brutalist:
+        </p>
+        <ul>
+            <li>
+                <strong>Palet Warna</strong>: Crimson Blood Red (<code
+                    class="inline"
+                    >primary</code
+                >), Toxic Radioactive Green (<code class="inline"
+                    >secondary</code
+                >), Plasma Cyan (<code class="inline">accent</code>), dan
+                Industrial Charcoal (<code class="inline">background</code>).
+            </li>
+            <li>
+                <strong>Tipografi &amp; Sudut</strong>: Font Google
+                <code class="inline">Oxanium</code> untuk body/headings,
+                <code class="inline">Source Code Pro</code> untuk angka numerik
+                POS/barcode, serta
+                <code class="inline">radius: 0px</code> (flat, angular).
+            </li>
+            <li>
+                <strong>Isolasi Khusus Landing Page</strong>: Halaman utama
+                (<code class="inline">welcome.tsx</code>) dibungkus kelas
+                <code class="inline">.homepage-isolated</code> agar tetap
+                mempertahankan desain landing page modernnya: font
+                <code class="inline">Inter</code>, sudut membulat (<code
+                    class="inline"
+                    >rounded-2xl/3xl</code
+                >), dan gradien biru-emerald.
+            </li>
+        </ul>
+
+        <!-- 4. Matriks Pengujian -->
+        <h3 class="section-title">
+            4. Matriks Hasil Pengujian (Automated Verification)
+        </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 35%">Modul Uji</th>
+                    <th style="width: 35%">File Test Suite</th>
+                    <th style="width: 15%">Assertions</th>
+                    <th style="width: 15%">Hasil</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Kasbon &amp; Potongan Payroll</strong></td>
+                    <td>
+                        <code class="inline"
+                            >EmployeeKasbonAndDeductionsTest.php</code
+                        >
+                    </td>
+                    <td>24 assertions</td>
+                    <td><span class="badge-status">✅ 5/5 Passed</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Store Feature Toggles</strong></td>
+                    <td>
+                        <code class="inline"
+                            >TenantStoreSettingsFeatureToggleTest.php</code
+                        >
+                    </td>
+                    <td>50 assertions</td>
+                    <td><span class="badge-status">✅ 9/9 Passed</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Shift Toko &amp; Full Shift Preset</strong></td>
+                    <td>
+                        <code class="inline">StoreShiftSettingsTest.php</code>
+                    </td>
+                    <td>22 assertions</td>
+                    <td><span class="badge-status">✅ 3/3 Passed</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Manajemen Shift Kasir</strong></td>
+                    <td><code class="inline">ShiftManagementTest.php</code></td>
+                    <td>29 assertions</td>
+                    <td><span class="badge-status">✅ 7/7 Passed</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Buku Kas &amp; Audit Trail</strong></td>
+                    <td>
+                        <code class="inline">CashFlowManagementTest.php</code>
+                    </td>
+                    <td>18 assertions</td>
+                    <td><span class="badge-status">✅ 5/5 Passed</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Kompilasi Frontend (Build)</strong></td>
+                    <td>
+                        <code class="inline"
+                            >npm run build (Vite + Rolldown)</code
+                        >
+                    </td>
+                    <td>Zero Errors</td>
+                    <td><span class="badge-status">✅ 12.60s Built</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Format Standar Kode PHP</strong></td>
+                    <td>
+                        <code class="inline"
+                            >vendor/bin/pint --dirty --format agent</code
+                        >
+                    </td>
+                    <td>Zero Violations</td>
+                    <td><span class="badge-status">✅ Clean</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 5. Kredensial Akses & Panduan -->
+        <h3 class="section-title">
+            5. Kredensial Pengujian &amp; Panduan Akses
+        </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 25%">Peran (Role)</th>
+                    <th style="width: 25%">Email</th>
+                    <th style="width: 15%">Password</th>
+                    <th style="width: 15%">PIN Kasir</th>
+                    <th style="width: 20%">Akses Fitur</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Admin Toko (Owner)</strong></td>
+                    <td><code class="inline">admin@waroeng.com</code></td>
+                    <td><code class="inline">password</code></td>
+                    <td><code class="inline">9999</code></td>
+                    <td>Full Akses Toko &amp; Pengaturan</td>
+                </tr>
+                <tr>
+                    <td><strong>Supervisor</strong></td>
+                    <td><code class="inline">spv@waroeng.com</code></td>
+                    <td><code class="inline">password</code></td>
+                    <td><code class="inline">8888</code></td>
+                    <td>Otorisasi Kasir &amp; Diskon</td>
+                </tr>
+                <tr>
+                    <td><strong>Kasir POS</strong></td>
+                    <td><code class="inline">kasir@waroeng.com</code></td>
+                    <td><code class="inline">password</code></td>
+                    <td><code class="inline">1234</code></td>
+                    <td>Terminal Kasir &amp; Buka Shift</td>
+                </tr>
+                <tr>
+                    <td><strong>Super Administrator</strong></td>
+                    <td><code class="inline">superadmin@waroeng.com</code></td>
+                    <td><code class="inline">password</code></td>
+                    <td><code class="inline">0000</code></td>
+                    <td>Master Tenant Platform SaaS</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="highlight-box">
+            <strong>Akses Sistem:</strong><br />
+            • <strong>Production URL:</strong>
+            <a href="https://waroeng.umkaem.my.id"
+                >https://waroeng.umkaem.my.id</a
+            ><br />
+            • <strong>Local Development URL:</strong>
+            <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a> (Jalankan
+            via <code class="inline">composer run dev</code>)
+        </div>
+
+        <div class="footer">
+            <span
+                >Sistem SaaS Minimarket POS &amp; Mini-ERP — Dokumen Eksekusi
+                Lengkap V7.0</span
+            >
+            <span
+                >Tanggal: 20 September 2026 | Status: Terverifikasi &amp;
+                Deployed</span
+            >
+        </div>
+    </body>
+</html>

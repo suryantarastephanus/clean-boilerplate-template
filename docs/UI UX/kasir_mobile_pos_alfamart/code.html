@@ -1,0 +1,885 @@
+<!doctype html>
+
+<html class="dark" lang="id">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+            name="viewport"
+        />
+        <title>AlfaMart Mobile POS - Checkout</title>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link
+            crossorigin=""
+            href="https://fonts.gstatic.com"
+            rel="preconnect"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600;700&amp;display=swap"
+            rel="stylesheet"
+        />
+        <!-- Material Symbols -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            error: '#ffb4ab',
+                            primary: '#b4c5ff',
+                            'inverse-on-surface': '#303033',
+                            'tertiary-fixed': '#ffddb8',
+                            'on-surface-variant': '#c3c6d7',
+                            'inverse-surface': '#e4e1e6',
+                            'surface-dim': '#131316',
+                            'tertiary-fixed-dim': '#ffb95f',
+                            'error-container': '#93000a',
+                            'surface-container-highest': '#353438',
+                            secondary: '#4edea3',
+                            'surface-container-lowest': '#0e0e11',
+                            'primary-fixed': '#dbe1ff',
+                            'tertiary-container': '#996100',
+                            'surface-container-high': '#2a2a2d',
+                            'on-background': '#e4e1e6',
+                            'primary-container': '#2563eb',
+                            'on-secondary-container': '#00311f',
+                            'on-secondary-fixed': '#002113',
+                            'on-error-container': '#ffdad6',
+                            'secondary-fixed-dim': '#4edea3',
+                            'on-secondary': '#003824',
+                            outline: '#8d90a0',
+                            'inverse-primary': '#0053db',
+                            'surface-tint': '#b4c5ff',
+                            'on-tertiary-fixed-variant': '#653e00',
+                            'on-primary-container': '#eeefff',
+                            'on-primary-fixed-variant': '#003ea8',
+                            'outline-variant': '#434655',
+                            'on-surface': '#e4e1e6',
+                            'on-primary-fixed': '#00174b',
+                            'secondary-fixed': '#6ffbbe',
+                            'primary-fixed-dim': '#b4c5ff',
+                            'surface-container': '#1f1f22',
+                            'on-tertiary-container': '#ffeedd',
+                            'surface-variant': '#353438',
+                            'on-tertiary': '#472a00',
+                            'on-primary': '#002a78',
+                            'on-tertiary-fixed': '#2a1700',
+                            'on-error': '#690005',
+                            background: '#131316',
+                            surface: '#131316',
+                            'on-secondary-fixed-variant': '#005236',
+                            'secondary-container': '#00a572',
+                            tertiary: '#ffb95f',
+                            'surface-bright': '#39393c',
+                            'surface-container-low': '#1b1b1e',
+                        },
+                        borderRadius: {
+                            DEFAULT: '0.125rem',
+                            lg: '0.25rem',
+                            xl: '0.5rem',
+                            full: '0.75rem',
+                        },
+                        spacing: {
+                            'space-md': '0.5rem',
+                            'margin-tablet': '0.5rem',
+                            'space-xl': '1rem',
+                            'space-lg': '0.75rem',
+                            'gutter-tablet': '0.375rem',
+                            'space-sm': '0.375rem',
+                            gutter: '0.5rem',
+                            'space-xs': '0.25rem',
+                            margin: '0.75rem',
+                        },
+                        fontFamily: {
+                            'body-sm': ['Inter'],
+                            'headline-lg': ['Inter'],
+                            'data-lg': ['JetBrains Mono'],
+                            'headline-sm': ['Inter'],
+                            'display-total': ['JetBrains Mono'],
+                            'label-key': ['JetBrains Mono'],
+                            'display-total-mobile': ['JetBrains Mono'],
+                            'body-md': ['Inter'],
+                            'data-sm': ['JetBrains Mono'],
+                            'data-md': ['JetBrains Mono'],
+                        },
+                        fontSize: {
+                            'body-sm': [
+                                '12px',
+                                {
+                                    lineHeight: '16px',
+                                    letterSpacing: '0em',
+                                    fontWeight: '400',
+                                },
+                            ],
+                            'headline-lg': [
+                                '24px',
+                                {
+                                    lineHeight: '28px',
+                                    letterSpacing: '-0.02em',
+                                    fontWeight: '600',
+                                },
+                            ],
+                            'data-lg': [
+                                '20px',
+                                {
+                                    lineHeight: '24px',
+                                    letterSpacing: '-0.02em',
+                                    fontWeight: '600',
+                                },
+                            ],
+                            'headline-sm': [
+                                '18px',
+                                {
+                                    lineHeight: '22px',
+                                    letterSpacing: '-0.01em',
+                                    fontWeight: '600',
+                                },
+                            ],
+                            'display-total': [
+                                '48px',
+                                {
+                                    lineHeight: '52px',
+                                    letterSpacing: '-0.04em',
+                                    fontWeight: '700',
+                                },
+                            ],
+                            'label-key': [
+                                '12px',
+                                {
+                                    lineHeight: '14px',
+                                    letterSpacing: '0.06em',
+                                    fontWeight: '700',
+                                },
+                            ],
+                            'display-total-mobile': [
+                                '32px',
+                                {
+                                    lineHeight: '36px',
+                                    letterSpacing: '-0.03em',
+                                    fontWeight: '700',
+                                },
+                            ],
+                            'body-md': [
+                                '14px',
+                                {
+                                    lineHeight: '18px',
+                                    letterSpacing: '0em',
+                                    fontWeight: '400',
+                                },
+                            ],
+                            'data-sm': [
+                                '11px',
+                                {
+                                    lineHeight: '14px',
+                                    letterSpacing: '0em',
+                                    fontWeight: '500',
+                                },
+                            ],
+                            'data-md': [
+                                '14px',
+                                {
+                                    lineHeight: '18px',
+                                    letterSpacing: '-0.01em',
+                                    fontWeight: '500',
+                                },
+                            ],
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .no-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            .material-symbols-outlined {
+                font-family: 'Material Symbols Outlined';
+                font-weight: normal;
+                font-style: normal;
+                font-size: 20px;
+                line-height: 1;
+                display: inline-block;
+                white-space: nowrap;
+                word-wrap: normal;
+                direction: ltr;
+            }
+        </style>
+        <style>
+            body {
+                min-height: max(884px, 100dvh);
+            }
+        </style>
+    </head>
+    <body
+        class="bg-surface text-on-surface font-body-md flex min-h-screen flex-col items-center overflow-x-hidden antialiased select-none"
+    >
+        <!-- Handheld Device Simulator Container -->
+        <div
+            class="bg-surface border-outline-variant/30 relative flex min-h-screen w-full max-w-md flex-col border-x pb-44 shadow-2xl"
+        >
+            <!-- Top Sticky Header Section -->
+            <header
+                class="bg-surface/95 border-outline-variant/30 sticky top-0 z-40 border-b backdrop-blur-md"
+            >
+                <!-- Store Status Bar -->
+                <div
+                    class="bg-surface-container-low border-outline-variant/20 flex items-center justify-between border-b px-3 py-2.5"
+                >
+                    <div class="flex min-w-0 items-center gap-2">
+                        <div
+                            class="border-secondary/40 ring-secondary/20 relative size-9 shrink-0 overflow-hidden rounded-full border ring-1"
+                        >
+                            <div
+                                class="size-full bg-cover bg-center"
+                                data-alt="Close up portrait photograph of a friendly Asian minimarket cashier smiling warmly in a dark uniform indoors under clean store lighting with balanced high contrast and professional composition"
+                                style="
+                                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCeaSTQlyoWZ7HIvnuLJhDGmy1FQ011XfKGYyDnNOoFAjWPOs_DWyP7mS1HhUWkSkbTUxe7Ti_GhBRlR1JphOTE7qdTg6Qu4helOmtEKj_g5roFV8-c-qgbvZAJleKX9PmS-sB74zpcg711bl6_q_-nrOUP7K8rdVrctcdH9QsxHnLyQHgKu9TkgH78gZuoE6SEiAx0JFO6k-EHbL_5KnlOEGG8G6ExsAaOC2IvDNRJiIiNtnO9xYE');
+                                "
+                            ></div>
+                            <span
+                                class="bg-secondary ring-surface-container-low absolute right-0 bottom-0 size-2.5 rounded-full ring-2"
+                            ></span>
+                        </div>
+                        <div class="truncate">
+                            <div class="flex items-center gap-1.5">
+                                <h1
+                                    class="text-on-surface truncate text-sm leading-tight font-semibold"
+                                >
+                                    AlfaMart Rungkut 02
+                                </h1>
+                                <span
+                                    class="bg-primary/20 text-primary rounded px-1.5 py-0.5 text-[10px] font-semibold tracking-wider uppercase"
+                                    >Shift 1</span
+                                >
+                            </div>
+                            <p class="text-on-surface-variant truncate text-xs">
+                                Kasir:
+                                <span class="text-on-surface font-medium"
+                                    >Budi Santoso</span
+                                >
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Inline Scan Barcode Quick Trigger -->
+                    <button
+                        class="bg-secondary text-on-secondary hover:bg-secondary/90 flex h-9 shrink-0 items-center gap-1.5 rounded-lg px-3 text-xs font-medium shadow-sm transition active:scale-95"
+                        type="button"
+                    >
+                        <span class="material-symbols-outlined text-base"
+                            >photo_camera</span
+                        >
+                        <span class="font-semibold tracking-tight">Scan</span>
+                        <span
+                            class="ml-0.5 size-2 animate-pulse rounded-full bg-emerald-950"
+                        ></span>
+                    </button>
+                </div>
+                <!-- Category Filter Pills -->
+                <div
+                    class="no-scrollbar bg-surface flex items-center gap-1.5 overflow-x-auto px-3 py-2"
+                >
+                    <button
+                        class="bg-primary text-on-primary h-7 shrink-0 rounded-full px-3 text-xs font-semibold shadow-sm transition"
+                    >
+                        Semua
+                    </button>
+                    <button
+                        class="bg-surface-container text-on-surface-variant hover:text-on-surface border-outline-variant/30 flex h-7 shrink-0 items-center gap-1 rounded-full border px-3 text-xs font-medium"
+                    >
+                        <span>⭐</span> Promo
+                    </button>
+                    <button
+                        class="bg-surface-container text-on-surface-variant hover:text-on-surface border-outline-variant/30 flex h-7 shrink-0 items-center gap-1 rounded-full border px-3 text-xs font-medium"
+                    >
+                        <span>🚬</span> Rokok
+                    </button>
+                    <button
+                        class="bg-surface-container text-on-surface-variant hover:text-on-surface border-outline-variant/30 flex h-7 shrink-0 items-center gap-1 rounded-full border px-3 text-xs font-medium"
+                    >
+                        <span>🥤</span> Minuman
+                    </button>
+                    <button
+                        class="bg-surface-container text-on-surface-variant hover:text-on-surface border-outline-variant/30 flex h-7 shrink-0 items-center gap-1 rounded-full border px-3 text-xs font-medium"
+                    >
+                        <span>🍪</span> Snack
+                    </button>
+                    <button
+                        class="bg-surface-container text-on-surface-variant hover:text-on-surface border-outline-variant/30 flex h-7 shrink-0 items-center gap-1 rounded-full border px-3 text-xs font-medium"
+                    >
+                        <span>🍞</span> Roti
+                    </button>
+                    <button
+                        class="bg-surface-container text-on-surface-variant hover:text-on-surface border-outline-variant/30 flex h-7 shrink-0 items-center gap-1 rounded-full border px-3 text-xs font-medium"
+                    >
+                        <span>🍜</span> Mie Instan
+                    </button>
+                </div>
+                <!-- Minimalist Search Input Field -->
+                <div class="px-3 pt-0.5 pb-2.5">
+                    <div
+                        class="bg-surface-container-high border-outline-variant/40 focus-within:border-primary focus-within:ring-primary relative flex h-10 w-full items-center rounded-lg border transition focus-within:ring-1"
+                    >
+                        <div
+                            class="text-on-surface-variant pointer-events-none flex items-center pl-2.5"
+                        >
+                            <span class="material-symbols-outlined text-lg"
+                                >search</span
+                            >
+                        </div>
+                        <input
+                            class="text-on-surface placeholder:text-on-surface-variant/60 w-full border-0 bg-transparent px-2.5 text-xs focus:ring-0 focus:outline-none"
+                            id="pos-search"
+                            placeholder="Cari nama barang atau barcode..."
+                            type="text"
+                        />
+                        <div
+                            class="text-on-surface-variant flex items-center gap-1.5 pr-2"
+                        >
+                            <button
+                                class="hover:text-on-surface text-outline p-1"
+                                title="Clear search"
+                                type="button"
+                            >
+                                <span class="material-symbols-outlined text-sm"
+                                    >close</span
+                                >
+                            </button>
+                            <div class="bg-outline-variant/40 h-4 w-px"></div>
+                            <button
+                                class="hover:text-secondary text-on-surface-variant p-1"
+                                title="Barcode Mode"
+                                type="button"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-base"
+                                    >barcode_scanner</span
+                                >
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Customer Mode & Kasbon Member Info -->
+                <div class="px-3 pb-2.5">
+                    <div
+                        class="bg-surface-container border-outline-variant/30 rounded-lg border p-1.5"
+                    >
+                        <div
+                            class="bg-surface-container-lowest mb-2 grid grid-cols-2 gap-1 rounded p-0.5"
+                        >
+                            <button
+                                class="text-on-surface-variant hover:text-on-surface rounded py-1 text-center text-xs font-medium transition"
+                                type="button"
+                            >
+                                Retail
+                            </button>
+                            <button
+                                class="text-secondary-fixed bg-surface-container-high border-outline-variant/30 flex items-center justify-center gap-1 rounded border py-1 text-center text-xs font-semibold shadow-xs transition"
+                                type="button"
+                            >
+                                <span class="material-symbols-outlined text-sm"
+                                    >check_circle</span
+                                >
+                                Trader (Kasbon)
+                            </button>
+                        </div>
+                        <div
+                            class="bg-surface-container-high/60 border-outline-variant/20 flex items-center justify-between rounded border px-2 py-1.5"
+                        >
+                            <div class="flex min-w-0 items-center gap-2">
+                                <div
+                                    class="bg-tertiary-container/30 text-tertiary flex size-7 shrink-0 items-center justify-center rounded-full"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-sm"
+                                        >person</span
+                                    >
+                                </div>
+                                <div class="truncate">
+                                    <p
+                                        class="text-on-surface truncate text-xs font-semibold"
+                                    >
+                                        Pak Slamet - Kasbon Toko
+                                    </p>
+                                    <p
+                                        class="font-data-sm text-on-surface-variant truncate text-[11px]"
+                                    >
+                                        Sisa Plafon:
+                                        <span
+                                            class="text-secondary font-data-sm font-semibold"
+                                            >Rp 1.500.000</span
+                                        >
+                                    </p>
+                                </div>
+                            </div>
+                            <button
+                                class="text-primary ml-2 shrink-0 text-xs font-medium hover:underline"
+                                type="button"
+                            >
+                                Ganti
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- Quick Action Bar -->
+            <div
+                class="bg-surface-container-lowest/80 border-outline-variant/20 flex items-center justify-between gap-1.5 border-b px-3 py-2"
+            >
+                <button
+                    class="bg-surface-container border-outline-variant/30 hover:bg-surface-container-high text-on-surface flex flex-1 items-center justify-center gap-1 rounded border px-2 py-1.5 text-[11px] font-medium transition"
+                    type="button"
+                >
+                    <span class="material-symbols-outlined text-primary text-sm"
+                        >add_circle</span
+                    >
+                    <span>+ Item Manual</span>
+                </button>
+                <button
+                    class="bg-surface-container border-outline-variant/30 hover:bg-surface-container-high text-on-surface flex flex-1 items-center justify-center gap-1 rounded border px-2 py-1.5 text-[11px] font-medium transition"
+                    type="button"
+                >
+                    <span
+                        class="material-symbols-outlined text-tertiary text-sm"
+                        >pause_circle</span
+                    >
+                    <span>Hold (0)</span>
+                </button>
+                <button
+                    class="bg-surface-container border-outline-variant/30 hover:bg-surface-container-high text-on-surface flex flex-1 items-center justify-center gap-1 rounded border px-2 py-1.5 text-[11px] font-medium transition"
+                    type="button"
+                >
+                    <span
+                        class="material-symbols-outlined text-secondary text-sm"
+                        >percent</span
+                    >
+                    <span>Diskon</span>
+                </button>
+            </div>
+            <!-- Active Cart Items List -->
+            <main class="flex-1 space-y-2.5 px-3 py-2.5">
+                <!-- Cart Section Subtitle -->
+                <div
+                    class="text-on-surface-variant flex items-center justify-between px-1 text-xs font-medium"
+                >
+                    <span>DAFTAR BELANJA (5 SKU)</span>
+                    <button
+                        class="text-error flex items-center gap-0.5 text-[11px] hover:underline"
+                    >
+                        <span class="material-symbols-outlined text-xs"
+                            >delete_sweep</span
+                        >
+                        Kosongkan
+                    </button>
+                </div>
+                <!-- Item 1 -->
+                <div
+                    class="bg-surface-container border-outline-variant/30 hover:border-outline-variant relative flex flex-col gap-2 rounded-lg border p-2.5 transition"
+                >
+                    <div class="flex items-start justify-between gap-2">
+                        <div class="min-w-0 flex-1">
+                            <div class="flex flex-wrap items-center gap-1.5">
+                                <span
+                                    class="text-on-surface text-xs font-semibold"
+                                    >Indomie Goreng Spesial</span
+                                >
+                                <span
+                                    class="py-0.2 bg-surface-container-highest text-primary border-outline-variant/20 rounded border px-1.5 text-[10px] font-semibold"
+                                    >Karton</span
+                                >
+                            </div>
+                            <p
+                                class="font-data-sm text-on-surface-variant mt-0.5 text-[11px]"
+                            >
+                                @ Rp 118.000
+                            </p>
+                        </div>
+                        <button
+                            aria-label="Hapus Item"
+                            class="text-error/80 hover:text-error hover:bg-error-container/20 shrink-0 rounded p-1 transition"
+                            type="button"
+                        >
+                            <span class="material-symbols-outlined text-base"
+                                >close</span
+                            >
+                        </button>
+                    </div>
+                    <div
+                        class="border-outline-variant/20 flex items-center justify-between border-t pt-1"
+                    >
+                        <span
+                            class="font-data-md text-on-surface text-sm font-semibold"
+                            >Rp 118.000</span
+                        >
+                        <!-- Stepper -->
+                        <div
+                            class="bg-surface-container-high border-outline-variant/30 flex h-8 items-center rounded border"
+                        >
+                            <button
+                                class="text-on-surface-variant hover:text-on-surface active:bg-surface-container-highest flex h-full w-8 items-center justify-center rounded-l text-base transition"
+                                type="button"
+                            >
+                                -
+                            </button>
+                            <span
+                                class="font-data-sm text-on-surface w-8 text-center text-xs font-semibold"
+                                >1</span
+                            >
+                            <button
+                                class="text-on-surface-variant hover:text-on-surface active:bg-surface-container-highest flex h-full w-8 items-center justify-center rounded-r text-base transition"
+                                type="button"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div
+                    class="bg-surface-container border-outline-variant/30 hover:border-outline-variant ring-secondary/20 relative flex flex-col gap-2 rounded-lg border p-2.5 ring-1 transition"
+                >
+                    <div class="flex items-start justify-between gap-2">
+                        <div class="min-w-0 flex-1">
+                            <div class="flex flex-wrap items-center gap-1.5">
+                                <span
+                                    class="text-on-surface text-xs font-semibold"
+                                    >Aqua Air Mineral 600ml</span
+                                >
+                                <span
+                                    class="py-0.2 bg-surface-container-highest text-primary border-outline-variant/20 rounded border px-1.5 text-[10px] font-semibold"
+                                    >Pcs</span
+                                >
+                                <span
+                                    class="py-0.2 bg-secondary/15 text-secondary border-secondary/30 rounded border px-1.5 text-[10px] font-semibold"
+                                    >Promo: Beli 5 Gratis 1</span
+                                >
+                            </div>
+                            <p
+                                class="font-data-sm text-on-surface-variant mt-0.5 text-[11px]"
+                            >
+                                @ Rp 3.500
+                            </p>
+                        </div>
+                        <button
+                            aria-label="Hapus Item"
+                            class="text-error/80 hover:text-error hover:bg-error-container/20 shrink-0 rounded p-1 transition"
+                            type="button"
+                        >
+                            <span class="material-symbols-outlined text-base"
+                                >close</span
+                            >
+                        </button>
+                    </div>
+                    <div
+                        class="border-outline-variant/20 flex items-center justify-between border-t pt-1"
+                    >
+                        <div class="flex items-baseline gap-1.5">
+                            <span
+                                class="font-data-md text-on-surface text-sm font-semibold"
+                                >Rp 21.000</span
+                            >
+                            <span
+                                class="text-secondary font-data-sm text-[10px]"
+                                >(Hemat Rp 3.500)</span
+                            >
+                        </div>
+                        <!-- Stepper -->
+                        <div
+                            class="bg-surface-container-high border-outline-variant/30 flex h-8 items-center rounded border"
+                        >
+                            <button
+                                class="text-on-surface-variant hover:text-on-surface active:bg-surface-container-highest flex h-full w-8 items-center justify-center rounded-l text-base transition"
+                                type="button"
+                            >
+                                -
+                            </button>
+                            <span
+                                class="font-data-sm text-secondary w-8 text-center text-xs font-semibold"
+                                >6</span
+                            >
+                            <button
+                                class="text-on-surface-variant hover:text-on-surface active:bg-surface-container-highest flex h-full w-8 items-center justify-center rounded-r text-base transition"
+                                type="button"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div
+                    class="bg-surface-container border-outline-variant/30 hover:border-outline-variant relative flex flex-col gap-2 rounded-lg border p-2.5 transition"
+                >
+                    <div class="flex items-start justify-between gap-2">
+                        <div class="min-w-0 flex-1">
+                            <div class="flex flex-wrap items-center gap-1.5">
+                                <span
+                                    class="text-on-surface text-xs font-semibold"
+                                    >Djarum Super 16</span
+                                >
+                                <span
+                                    class="py-0.2 bg-tertiary/15 text-tertiary border-tertiary/30 rounded border px-1.5 text-[10px] font-semibold"
+                                    >Slop</span
+                                >
+                                <span
+                                    class="text-on-surface-variant text-[10px]"
+                                    >10 Pcs</span
+                                >
+                            </div>
+                            <p
+                                class="font-data-sm text-on-surface-variant mt-0.5 text-[11px]"
+                            >
+                                @ Rp 342.000
+                            </p>
+                        </div>
+                        <button
+                            aria-label="Hapus Item"
+                            class="text-error/80 hover:text-error hover:bg-error-container/20 shrink-0 rounded p-1 transition"
+                            type="button"
+                        >
+                            <span class="material-symbols-outlined text-base"
+                                >close</span
+                            >
+                        </button>
+                    </div>
+                    <div
+                        class="border-outline-variant/20 flex items-center justify-between border-t pt-1"
+                    >
+                        <span
+                            class="font-data-md text-on-surface text-sm font-semibold"
+                            >Rp 342.000</span
+                        >
+                        <!-- Stepper -->
+                        <div
+                            class="bg-surface-container-high border-outline-variant/30 flex h-8 items-center rounded border"
+                        >
+                            <button
+                                class="text-on-surface-variant hover:text-on-surface active:bg-surface-container-highest flex h-full w-8 items-center justify-center rounded-l text-base transition"
+                                type="button"
+                            >
+                                -
+                            </button>
+                            <span
+                                class="font-data-sm text-on-surface w-8 text-center text-xs font-semibold"
+                                >1</span
+                            >
+                            <button
+                                class="text-on-surface-variant hover:text-on-surface active:bg-surface-container-highest flex h-full w-8 items-center justify-center rounded-r text-base transition"
+                                type="button"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div
+                    class="bg-surface-container border-outline-variant/30 hover:border-outline-variant relative flex flex-col gap-2 rounded-lg border p-2.5 transition"
+                >
+                    <div class="flex items-start justify-between gap-2">
+                        <div class="min-w-0 flex-1">
+                            <div class="flex flex-wrap items-center gap-1.5">
+                                <span
+                                    class="text-on-surface text-xs font-semibold"
+                                    >Sari Roti Sobek Coklat</span
+                                >
+                                <span
+                                    class="py-0.2 bg-surface-container-highest text-primary border-outline-variant/20 rounded border px-1.5 text-[10px] font-semibold"
+                                    >Pcs</span
+                                >
+                            </div>
+                            <p
+                                class="font-data-sm text-on-surface-variant mt-0.5 text-[11px]"
+                            >
+                                @ Rp 12.000
+                            </p>
+                        </div>
+                        <button
+                            aria-label="Hapus Item"
+                            class="text-error/80 hover:text-error hover:bg-error-container/20 shrink-0 rounded p-1 transition"
+                            type="button"
+                        >
+                            <span class="material-symbols-outlined text-base"
+                                >close</span
+                            >
+                        </button>
+                    </div>
+                    <div
+                        class="border-outline-variant/20 flex items-center justify-between border-t pt-1"
+                    >
+                        <span
+                            class="font-data-md text-on-surface text-sm font-semibold"
+                            >Rp 24.000</span
+                        >
+                        <!-- Stepper -->
+                        <div
+                            class="bg-surface-container-high border-outline-variant/30 flex h-8 items-center rounded border"
+                        >
+                            <button
+                                class="text-on-surface-variant hover:text-on-surface active:bg-surface-container-highest flex h-full w-8 items-center justify-center rounded-l text-base transition"
+                                type="button"
+                            >
+                                -
+                            </button>
+                            <span
+                                class="font-data-sm text-on-surface w-8 text-center text-xs font-semibold"
+                                >2</span
+                            >
+                            <button
+                                class="text-on-surface-variant hover:text-on-surface active:bg-surface-container-highest flex h-full w-8 items-center justify-center rounded-r text-base transition"
+                                type="button"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div
+                    class="bg-surface-container border-outline-variant/30 hover:border-outline-variant relative flex flex-col gap-2 rounded-lg border p-2.5 transition"
+                >
+                    <div class="flex items-start justify-between gap-2">
+                        <div class="min-w-0 flex-1">
+                            <div class="flex flex-wrap items-center gap-1.5">
+                                <span
+                                    class="text-on-surface text-xs font-semibold"
+                                    >Kantong Ramah Lingkungan (L)</span
+                                >
+                                <span
+                                    class="py-0.2 bg-surface-container-highest text-primary border-outline-variant/20 rounded border px-1.5 text-[10px] font-semibold"
+                                    >Pcs</span
+                                >
+                            </div>
+                            <p
+                                class="font-data-sm text-on-surface-variant mt-0.5 text-[11px]"
+                            >
+                                @ Rp 500
+                            </p>
+                        </div>
+                        <button
+                            aria-label="Hapus Item"
+                            class="text-error/80 hover:text-error hover:bg-error-container/20 shrink-0 rounded p-1 transition"
+                            type="button"
+                        >
+                            <span class="material-symbols-outlined text-base"
+                                >close</span
+                            >
+                        </button>
+                    </div>
+                    <div
+                        class="border-outline-variant/20 flex items-center justify-between border-t pt-1"
+                    >
+                        <span
+                            class="font-data-md text-on-surface text-sm font-semibold"
+                            >Rp 500</span
+                        >
+                        <!-- Stepper -->
+                        <div
+                            class="bg-surface-container-high border-outline-variant/30 flex h-8 items-center rounded border"
+                        >
+                            <button
+                                class="text-on-surface-variant hover:text-on-surface active:bg-surface-container-highest flex h-full w-8 items-center justify-center rounded-l text-base transition"
+                                type="button"
+                            >
+                                -
+                            </button>
+                            <span
+                                class="font-data-sm text-on-surface w-8 text-center text-xs font-semibold"
+                                >1</span
+                            >
+                            <button
+                                class="text-on-surface-variant hover:text-on-surface active:bg-surface-container-highest flex h-full w-8 items-center justify-center rounded-r text-base transition"
+                                type="button"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- Sticky Bottom Sheet / Thumb-reach Checkout Footer -->
+            <div
+                class="pointer-events-none fixed right-0 bottom-0 left-0 z-50 flex justify-center"
+            >
+                <div
+                    class="bg-surface-container-low/95 border-outline-variant/30 pointer-events-auto w-full max-w-md border-t p-3 shadow-[0_-8px_20px_rgba(0,0,0,0.5)] backdrop-blur-lg"
+                >
+                    <!-- Summary Row -->
+                    <div
+                        class="border-outline-variant/20 text-on-surface-variant flex items-center justify-between border-b pb-2 text-xs"
+                    >
+                        <div class="flex items-center gap-1.5">
+                            <span
+                                class="material-symbols-outlined text-primary text-sm"
+                                >shopping_bag</span
+                            >
+                            <span class="text-on-surface font-medium"
+                                >5 SKU</span
+                            >
+                            <span>(11 Pcs Barang)</span>
+                        </div>
+                        <span class="text-[11px]">Termasuk PPN 11%</span>
+                    </div>
+                    <!-- Total Display -->
+                    <div class="flex items-baseline justify-between py-2.5">
+                        <span
+                            class="text-on-surface-variant text-xs font-medium tracking-wide uppercase"
+                            >Total Tagihan</span
+                        >
+                        <div class="text-right">
+                            <span
+                                class="font-display-total-mobile text-secondary font-bold tracking-tight"
+                                >Rp 505.500</span
+                            >
+                        </div>
+                    </div>
+                    <!-- Action Buttons Split Bar -->
+                    <div class="grid grid-cols-12 gap-2 pt-1">
+                        <!-- Batal Button -->
+                        <button
+                            class="border-error/50 bg-error-container/20 text-error hover:bg-error-container/40 col-span-4 flex h-12 items-center justify-center gap-1 rounded-lg border text-xs font-semibold transition active:scale-98"
+                            type="button"
+                        >
+                            <span class="material-symbols-outlined text-sm"
+                                >cancel</span
+                            >
+                            <span>Batal</span>
+                        </button>
+                        <!-- Bayar Sekarang Button -->
+                        <button
+                            class="bg-secondary hover:bg-secondary/90 text-on-secondary shadow-secondary/20 col-span-8 flex h-12 items-center justify-between rounded-lg px-4 text-sm font-bold shadow-lg transition active:scale-98"
+                            type="button"
+                        >
+                            <div class="flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-lg"
+                                    >payments</span
+                                >
+                                <span>Bayar Kasbon</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-xs">
+                                <span class="font-data-sm">Rp 505.500</span>
+                                <span class="material-symbols-outlined text-sm"
+                                    >arrow_forward</span
+                                >
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

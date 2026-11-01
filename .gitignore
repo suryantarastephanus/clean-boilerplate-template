@@ -1,0 +1,51 @@
+# ==============================================================================
+# 🚀 MASTER BOILERPLATE .GITIGNORE [ALL MARKED / DISABLED BY DEFAULT]
+# ==============================================================================
+# CATATAN & PANDUAN PENGGUNAAN:
+# Seluruh baris rule di bawah ini sengaja di-MARK (diberi tanda '#') agar seluruh
+# daftar terlihat jelas dan siap di-ENABLE (uncomment / hapus tanda '#') di
+# project baru Anda sesuai kebutuhan.
+#
+# CARA MENG-ENABLE:
+# 1. Buka file ini di project baru Anda.
+# 2. Hapus tanda '#' pada baris yang ingin Anda aktifkan (contoh: hapus '#' pada
+#    /node_modules, /vendor, .env, dll.)
+# ==============================================================================
+
+# --- [MARK: Testing & Cache] ---
+# /.phpunit.cache
+# /.phpunit.result.cache
+
+# --- [MARK: Build & Assets Output] ---
+# /bootstrap/ssr
+# /public/fonts-manifest.dev.json
+# /public/hot
+# /public/storage
+
+# --- [MARK: Dependencies] ---
+# /node_modules
+# /vendor
+
+# --- [MARK: Storage & Keys] ---
+# /storage/*.key
+# /storage/pail
+# *.log
+
+# --- [MARK: Environment & Secrets] ---
+# .env
+# .env.backup
+# .env.production
+# /auth.json
+
+# --- [MARK: OS & IDE Configurations] ---
+# .DS_Store
+# .phpactor.json
+# Homestead.json
+# Homestead.yaml
+# npm-debug.log
+# yarn-error.log
+# /.fleet
+# /.idea
+# /.nova
+# /.vscode
+# /.zed
